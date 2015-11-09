@@ -8,14 +8,14 @@ class BatLogic : ZilchComponent
   var SleepTimer : Real = 0.0;
   
   var Activated : Boolean = false;
-  var ExtraChargeTime : Real = 1.5;
+  var ExtraChargeTime : Real = 1.0;
   var ChargeTimer : Real = 0.0;
   
   var Eyes : Cog;
   var Player : Cog;
   
   [Property]
-  var ChargeSpeed : Real = 75.0;
+  var ChargeSpeed : Real = 10.0;
   
   //Radius of the custom sphere collider for enemy detection
   var RadiusOfFlashlight : Real = 2.5;
@@ -27,7 +27,7 @@ class BatLogic : ZilchComponent
     this.StartingPos = this.Owner.Transform.Translation;
     this.Owner.Transform.Translation = Real3(this.Owner.Transform.Translation.X, this.Owner.Transform.Translation.Y, -1);
     this.Light = this.Space.FindObjectByName("Light");
-    this.Player = this.Space.FindObjectByName("Player");
+    this.Player = this.Space.FindObjectByName("Light");
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
     
@@ -114,7 +114,7 @@ class BatLogic : ZilchComponent
         this.Owner.Transform.Translation = Real3(this.Owner.Transform.Translation.X, this.Owner.Transform.Translation.Y, 0);
         
         //Applies velocity to the enemy
-        this.Owner.RigidBody.Velocity = Real3(((1.5 * (chargeDir.X)/2) * this.ChargeSpeed * event.Dt) + (chargeDirUnit * 1), this.Owner.RigidBody.Velocity.Y + 0.1, 0.0);
+        this.Owner.RigidBody.Velocity = Real3(((1.5 * (chargeDir.X)/2) * this.ChargeSpeed * event.Dt) + (chargeDirUnit * 2), this.Owner.RigidBody.Velocity.Y + 0.1, 0.0);
         
         if (downDistance <= 0.5)
         {
@@ -150,7 +150,7 @@ class BatLogic : ZilchComponent
             this.Owner.Transform.Translation = Real3(this.Owner.Transform.Translation.X, this.Owner.Transform.Translation.Y, 0);
             
             //Applies velocity to the enemy
-            this.Owner.RigidBody.Velocity = Real3(((1.5 * (chargeDir.X)/2) * this.ChargeSpeed * event.Dt), this.Owner.RigidBody.Velocity.Y + 0.1, 0.0);
+            this.Owner.RigidBody.Velocity = Real3(((1.5 * (chargeDir.X)/2) * this.ChargeSpeed * event.Dt) + (chargeDirUnit * 2), this.Owner.RigidBody.Velocity.Y + 0.1, 0.0);
             
             if (downDistance <= 0.5)
             {
