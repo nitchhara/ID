@@ -4,7 +4,7 @@ class CameraFollow : ZilchComponent
   var CameraOffsetY : Real = 2;
   
   [Property]
-  var FollowSpeed : Real = 100;
+  var FollowSpeed : Real = 150;
   
   var DirVec : Real3 = Real3();
   var Player : Cog;
