@@ -7,6 +7,8 @@ class WinRegion : ZilchComponent
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
     }
 
+//this is a test comment for git
+
     function OnCollisionStarted(event : CollisionEvent)
     {
         if (event.OtherObject.Name == "Player")
