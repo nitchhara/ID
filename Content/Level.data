@@ -122,7 +122,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-13.2515821, -124.053535, 49.9999695],
+			Vec3 Translation = [19.8905544, -127.686569, 49.9999733],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-008, 0, 1],
 		},
@@ -134,7 +134,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 27.2532139,
+			float Size = 81.8730927,
 		},
 		EditorCameraController = 
 		{
@@ -142,7 +142,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-13.2515821, -124.053535, -2.89981326e-005],
+			Vec3 LookTarget = [19.8905544, -127.686569, -2.69499342e-005],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -1636,12 +1636,142 @@ Level =
 			string Name = "GroundEnemy",
 		},
 	},
-	ArchetypeInstance = 
+	Cog = 
 	{
-		string Name = "560c9667c1ff3939:GroundEnemy",
 		LinkId = 
 		{
 			uint Id = 33,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+		Archetyped = 
+		{
+			string Name = "560c9667c1ff3939:GroundEnemy",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [8.90244675, -142.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.519999981, 0, 0.389999986, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		EnemyChargeIfWoken = 
+		{
+			float WakeUpTime = 1,
+			float ChargeSpeed = 40,
+		},
+		MassOverride = 
+		{
+			bool Active = true,
+			float invMass = 0.00200000009,
+			Vec3 invInertiaX = [0, 0, 0],
+			Vec3 invInertiaY = [0, 0, 0],
+			Vec3 invInertiaZ = [0, 0, 0],
+			Vec3 LocalCenterOfMass = [0, 0, 0],
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "5611966358cda6b8:Enemy",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.5, 0.5, 0.5],
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 34,
+				},
+				Named = 
+				{
+					string Name = "GroundEyes",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.0301589966, 0.12007308, 0.5],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Additive,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "561ddbce195f08ef:BatEyes",
+					bool RenderMask = true,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [2.5, 0.75],
+					Location Origin = Center,
+				},
+			},
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 35,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+		Archetyped = 
+		{
+			string Name = "560c9667c1ff3939:GroundEnemy",
 		},
 		Transform = 
 		{
@@ -1649,21 +1779,114 @@ Level =
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.519999981, 0, 0.389999986, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
 		Area = 
 		{
 			Vec2 Size = [1, 1],
 			Location Origin = Center,
 		},
-		Named = 
+		RigidBody = 
 		{
-			string Name = "GroundEnemy",
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		EnemyChargeIfWoken = 
+		{
+			float WakeUpTime = 1,
+			float ChargeSpeed = 80,
+		},
+		MassOverride = 
+		{
+			bool Active = true,
+			float invMass = 0.00200000009,
+			Vec3 invInertiaX = [0, 0, 0],
+			Vec3 invInertiaY = [0, 0, 0],
+			Vec3 invInertiaZ = [0, 0, 0],
+			Vec3 LocalCenterOfMass = [0, 0, 0],
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "5611966358cda6b8:Enemy",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.5, 0.5, 0.5],
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 36,
+				},
+				Named = 
+				{
+					string Name = "GroundEyes",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.0301589966, 0.12007308, 0.5],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Additive,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "561ddbce195f08ef:BatEyes",
+					bool RenderMask = true,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [2.5, 0.75],
+					Location Origin = Center,
+				},
+			},
 		},
 	},
 	Cog = 
 	{
 		LinkId = 
 		{
-			uint Id = 34,
+			uint Id = 37,
 		},
 		Named = 
 		{
@@ -1744,7 +1967,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 35,
+					uint Id = 38,
 				},
 				Named = 
 				{
@@ -1786,7 +2009,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 36,
+			uint Id = 39,
 		},
 		Named = 
 		{
@@ -1867,7 +2090,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 37,
+					uint Id = 40,
 				},
 				Named = 
 				{
@@ -1909,7 +2132,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 38,
+			uint Id = 41,
 		},
 		Named = 
 		{
@@ -1990,7 +2213,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 39,
+					uint Id = 42,
 				},
 				Named = 
 				{
@@ -2032,7 +2255,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 40,
+			uint Id = 43,
 		},
 		Named = 
 		{
@@ -2113,7 +2336,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 41,
+					uint Id = 44,
 				},
 				Named = 
 				{
@@ -2155,7 +2378,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 42,
+			uint Id = 45,
 		},
 		Named = 
 		{
@@ -2236,7 +2459,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 43,
+					uint Id = 46,
 				},
 				Named = 
 				{
@@ -2278,7 +2501,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 44,
+			uint Id = 47,
 		},
 		Named = 
 		{
@@ -2348,7 +2571,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 45,
+			uint Id = 48,
 		},
 		Named = 
 		{
@@ -2418,7 +2641,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 46,
+			uint Id = 49,
 		},
 		Named = 
 		{
@@ -2489,7 +2712,7 @@ Level =
 		string Name = "5638aed55162fc7f:Checkpoint",
 		LinkId = 
 		{
-			uint Id = 47,
+			uint Id = 50,
 		},
 		Transform = 
 		{
@@ -2506,7 +2729,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 48,
+			uint Id = 51,
 		},
 		Named = 
 		{
@@ -2558,7 +2781,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 49,
+			uint Id = 52,
 		},
 		Named = 
 		{
@@ -2610,7 +2833,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 50,
+			uint Id = 53,
 		},
 		Named = 
 		{
@@ -2662,7 +2885,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 51,
+			uint Id = 54,
 		},
 		Named = 
 		{
@@ -2714,7 +2937,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 52,
+			uint Id = 55,
 		},
 		Named = 
 		{
@@ -2766,7 +2989,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 53,
+			uint Id = 56,
 		},
 		Named = 
 		{
@@ -2818,7 +3041,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 54,
+			uint Id = 57,
 		},
 		Named = 
 		{
@@ -2870,7 +3093,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 55,
+			uint Id = 58,
 		},
 		Named = 
 		{
@@ -2922,7 +3145,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 56,
+			uint Id = 59,
 		},
 		Named = 
 		{
@@ -2974,7 +3197,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 57,
+			uint Id = 60,
 		},
 		Named = 
 		{
@@ -3026,7 +3249,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 58,
+			uint Id = 61,
 		},
 		Named = 
 		{
@@ -3078,7 +3301,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 59,
+			uint Id = 62,
 		},
 		Named = 
 		{
@@ -3130,7 +3353,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 60,
+			uint Id = 63,
 		},
 		Named = 
 		{
@@ -3182,7 +3405,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 61,
+			uint Id = 64,
 		},
 		Named = 
 		{
@@ -3234,7 +3457,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 62,
+			uint Id = 65,
 		},
 		Named = 
 		{
@@ -3286,7 +3509,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 63,
+			uint Id = 66,
 		},
 		Named = 
 		{
@@ -3338,7 +3561,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 64,
+			uint Id = 67,
 		},
 		Named = 
 		{
@@ -3390,7 +3613,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 65,
+			uint Id = 68,
 		},
 		Named = 
 		{
@@ -3442,7 +3665,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 66,
+			uint Id = 69,
 		},
 		Named = 
 		{
@@ -3495,7 +3718,7 @@ Level =
 		string Name = "5638aed55162fc7f:Checkpoint",
 		LinkId = 
 		{
-			uint Id = 67,
+			uint Id = 70,
 		},
 		Transform = 
 		{
@@ -3512,7 +3735,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 68,
+			uint Id = 71,
 		},
 		Named = 
 		{
@@ -3565,7 +3788,7 @@ Level =
 		string Name = "5638aed55162fc7f:Checkpoint",
 		LinkId = 
 		{
-			uint Id = 69,
+			uint Id = 72,
 		},
 		Transform = 
 		{
@@ -3583,7 +3806,7 @@ Level =
 		string Name = "5638aed55162fc7f:Checkpoint",
 		LinkId = 
 		{
-			uint Id = 70,
+			uint Id = 73,
 		},
 		Transform = 
 		{
@@ -3601,7 +3824,7 @@ Level =
 		string Name = "5638aed55162fc7f:Checkpoint",
 		LinkId = 
 		{
-			uint Id = 71,
+			uint Id = 74,
 		},
 		Transform = 
 		{
@@ -3619,7 +3842,7 @@ Level =
 		string Name = "5638aed55162fc7f:Checkpoint",
 		LinkId = 
 		{
-			uint Id = 72,
+			uint Id = 75,
 		},
 		Transform = 
 		{
@@ -3637,7 +3860,7 @@ Level =
 		string Name = "5638aed55162fc7f:Checkpoint",
 		LinkId = 
 		{
-			uint Id = 73,
+			uint Id = 76,
 		},
 		Transform = 
 		{
@@ -3655,7 +3878,7 @@ Level =
 		string Name = "5638aed55162fc7f:Checkpoint",
 		LinkId = 
 		{
-			uint Id = 74,
+			uint Id = 77,
 		},
 		Transform = 
 		{
@@ -3673,7 +3896,7 @@ Level =
 		string Name = "5638aed55162fc7f:Checkpoint",
 		LinkId = 
 		{
-			uint Id = 75,
+			uint Id = 78,
 		},
 		Transform = 
 		{
@@ -3691,7 +3914,7 @@ Level =
 		string Name = "5638aed55162fc7f:Checkpoint",
 		LinkId = 
 		{
-			uint Id = 76,
+			uint Id = 79,
 		},
 		Transform = 
 		{
@@ -3709,7 +3932,7 @@ Level =
 		string Name = "5638aed55162fc7f:Checkpoint",
 		LinkId = 
 		{
-			uint Id = 77,
+			uint Id = 80,
 		},
 		Transform = 
 		{
@@ -3727,7 +3950,7 @@ Level =
 		string Name = "5638aed55162fc7f:Checkpoint",
 		LinkId = 
 		{
-			uint Id = 78,
+			uint Id = 81,
 		},
 		Transform = 
 		{
@@ -3745,7 +3968,7 @@ Level =
 		string Name = "5638aed55162fc7f:Checkpoint",
 		LinkId = 
 		{
-			uint Id = 79,
+			uint Id = 82,
 		},
 		Transform = 
 		{
@@ -3763,7 +3986,7 @@ Level =
 		string Name = "5638aed55162fc7f:Checkpoint",
 		LinkId = 
 		{
-			uint Id = 80,
+			uint Id = 83,
 		},
 		Transform = 
 		{
@@ -3780,7 +4003,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 81,
+			uint Id = 84,
 		},
 		Named = 
 		{
@@ -3832,7 +4055,7 @@ Level =
 				bool UpdatePathOnCogChange = true,
 				bool UpdateCogOnInitialize = true,
 				bool ResolvedNullErrorOccurred = false,
-				uint ResolvedCog = 82,
+				uint ResolvedCog = 85,
 				CogPathPreference PathPreference0 = CogRelative,
 				CogPathPreference PathPreference1 = SpaceRelative,
 				CogPathPreference PathPreference2 = Absolute,
@@ -3844,7 +4067,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 82,
+					uint Id = 85,
 				},
 				Named = 
 				{
@@ -3880,7 +4103,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 83,
+			uint Id = 86,
 		},
 		Named = 
 		{
@@ -3932,7 +4155,7 @@ Level =
 				bool UpdatePathOnCogChange = true,
 				bool UpdateCogOnInitialize = true,
 				bool ResolvedNullErrorOccurred = false,
-				uint ResolvedCog = 84,
+				uint ResolvedCog = 87,
 				CogPathPreference PathPreference0 = CogRelative,
 				CogPathPreference PathPreference1 = SpaceRelative,
 				CogPathPreference PathPreference2 = Absolute,
@@ -3944,7 +4167,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 84,
+					uint Id = 87,
 				},
 				Named = 
 				{
@@ -3980,7 +4203,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 85,
+			uint Id = 88,
 		},
 		Named = 
 		{
@@ -4032,7 +4255,7 @@ Level =
 				bool UpdatePathOnCogChange = true,
 				bool UpdateCogOnInitialize = true,
 				bool ResolvedNullErrorOccurred = false,
-				uint ResolvedCog = 86,
+				uint ResolvedCog = 89,
 				CogPathPreference PathPreference0 = CogRelative,
 				CogPathPreference PathPreference1 = SpaceRelative,
 				CogPathPreference PathPreference2 = Absolute,
@@ -4044,7 +4267,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 86,
+					uint Id = 89,
 				},
 				Named = 
 				{
@@ -4080,7 +4303,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 87,
+			uint Id = 90,
 		},
 		Named = 
 		{
@@ -4132,7 +4355,7 @@ Level =
 				bool UpdatePathOnCogChange = true,
 				bool UpdateCogOnInitialize = true,
 				bool ResolvedNullErrorOccurred = false,
-				uint ResolvedCog = 88,
+				uint ResolvedCog = 91,
 				CogPathPreference PathPreference0 = CogRelative,
 				CogPathPreference PathPreference1 = SpaceRelative,
 				CogPathPreference PathPreference2 = Absolute,
@@ -4144,7 +4367,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 88,
+					uint Id = 91,
 				},
 				Named = 
 				{
@@ -4180,7 +4403,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 89,
+			uint Id = 92,
 		},
 		Named = 
 		{
@@ -4232,7 +4455,7 @@ Level =
 				bool UpdatePathOnCogChange = true,
 				bool UpdateCogOnInitialize = true,
 				bool ResolvedNullErrorOccurred = false,
-				uint ResolvedCog = 90,
+				uint ResolvedCog = 93,
 				CogPathPreference PathPreference0 = CogRelative,
 				CogPathPreference PathPreference1 = SpaceRelative,
 				CogPathPreference PathPreference2 = Absolute,
@@ -4244,7 +4467,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 90,
+					uint Id = 93,
 				},
 				Named = 
 				{
@@ -4280,7 +4503,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 91,
+			uint Id = 94,
 		},
 		Named = 
 		{
@@ -4332,7 +4555,7 @@ Level =
 				bool UpdatePathOnCogChange = true,
 				bool UpdateCogOnInitialize = true,
 				bool ResolvedNullErrorOccurred = false,
-				uint ResolvedCog = 92,
+				uint ResolvedCog = 95,
 				CogPathPreference PathPreference0 = CogRelative,
 				CogPathPreference PathPreference1 = SpaceRelative,
 				CogPathPreference PathPreference2 = Absolute,
@@ -4344,7 +4567,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 92,
+					uint Id = 95,
 				},
 				Named = 
 				{
@@ -4380,7 +4603,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 93,
+			uint Id = 96,
 		},
 		Named = 
 		{
@@ -4432,7 +4655,7 @@ Level =
 				bool UpdatePathOnCogChange = true,
 				bool UpdateCogOnInitialize = true,
 				bool ResolvedNullErrorOccurred = false,
-				uint ResolvedCog = 94,
+				uint ResolvedCog = 97,
 				CogPathPreference PathPreference0 = CogRelative,
 				CogPathPreference PathPreference1 = SpaceRelative,
 				CogPathPreference PathPreference2 = Absolute,
@@ -4444,7 +4667,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 94,
+					uint Id = 97,
 				},
 				Named = 
 				{
@@ -4480,7 +4703,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 95,
+			uint Id = 98,
 		},
 		Named = 
 		{
@@ -4532,7 +4755,7 @@ Level =
 				bool UpdatePathOnCogChange = true,
 				bool UpdateCogOnInitialize = true,
 				bool ResolvedNullErrorOccurred = false,
-				uint ResolvedCog = 96,
+				uint ResolvedCog = 99,
 				CogPathPreference PathPreference0 = CogRelative,
 				CogPathPreference PathPreference1 = SpaceRelative,
 				CogPathPreference PathPreference2 = Absolute,
@@ -4544,7 +4767,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 96,
+					uint Id = 99,
 				},
 				Named = 
 				{
@@ -4580,7 +4803,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 97,
+			uint Id = 100,
 		},
 		Named = 
 		{
@@ -4620,7 +4843,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 98,
+			uint Id = 101,
 		},
 		Named = 
 		{
@@ -4660,7 +4883,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 99,
+			uint Id = 102,
 		},
 		Named = 
 		{
@@ -4748,7 +4971,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 100,
+					uint Id = 103,
 				},
 				Named = 
 				{
@@ -4824,7 +5047,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 101,
+					uint Id = 104,
 				},
 				Named = 
 				{
@@ -4900,7 +5123,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 102,
+					uint Id = 105,
 				},
 				Named = 
 				{
@@ -4937,7 +5160,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 103,
+			uint Id = 106,
 		},
 		Named = 
 		{
@@ -5025,7 +5248,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 104,
+					uint Id = 107,
 				},
 				Named = 
 				{
@@ -5101,7 +5324,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 105,
+					uint Id = 108,
 				},
 				Named = 
 				{
@@ -5177,7 +5400,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 106,
+					uint Id = 109,
 				},
 				Named = 
 				{
@@ -5214,7 +5437,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 107,
+			uint Id = 110,
 		},
 		Named = 
 		{
@@ -5302,7 +5525,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 108,
+					uint Id = 111,
 				},
 				Named = 
 				{
@@ -5378,7 +5601,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 109,
+					uint Id = 112,
 				},
 				Named = 
 				{
@@ -5454,7 +5677,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 110,
+					uint Id = 113,
 				},
 				Named = 
 				{
@@ -5491,7 +5714,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 111,
+			uint Id = 114,
 		},
 		Named = 
 		{
@@ -5579,7 +5802,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 112,
+					uint Id = 115,
 				},
 				Named = 
 				{
@@ -5655,7 +5878,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 113,
+					uint Id = 116,
 				},
 				Named = 
 				{
@@ -5731,7 +5954,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 114,
+					uint Id = 117,
 				},
 				Named = 
 				{
@@ -5768,7 +5991,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 115,
+			uint Id = 118,
 		},
 		Named = 
 		{
@@ -5816,7 +6039,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 116,
+			uint Id = 119,
 		},
 		Named = 
 		{
@@ -5851,7 +6074,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 117,
+			uint Id = 120,
 		},
 		Named = 
 		{
@@ -5886,7 +6109,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 118,
+			uint Id = 121,
 		},
 		Named = 
 		{
@@ -5921,7 +6144,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 119,
+			uint Id = 122,
 		},
 		Named = 
 		{
@@ -5956,7 +6179,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 120,
+			uint Id = 123,
 		},
 		Named = 
 		{
@@ -6001,7 +6224,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 121,
+			uint Id = 124,
 		},
 		Named = 
 		{
@@ -6046,7 +6269,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 122,
+			uint Id = 125,
 		},
 		Named = 
 		{
@@ -6091,7 +6314,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 123,
+			uint Id = 126,
 		},
 		Named = 
 		{
@@ -6136,7 +6359,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 124,
+			uint Id = 127,
 		},
 		Named = 
 		{
@@ -6171,7 +6394,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 125,
+			uint Id = 128,
 		},
 		Named = 
 		{
@@ -6259,7 +6482,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 126,
+					uint Id = 129,
 				},
 				Named = 
 				{
@@ -6335,7 +6558,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 127,
+					uint Id = 130,
 				},
 				Named = 
 				{
@@ -6411,7 +6634,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 128,
+					uint Id = 131,
 				},
 				Named = 
 				{
@@ -6448,7 +6671,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 129,
+			uint Id = 132,
 		},
 		Named = 
 		{
@@ -6536,7 +6759,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 130,
+					uint Id = 133,
 				},
 				Named = 
 				{
@@ -6612,7 +6835,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 131,
+					uint Id = 134,
 				},
 				Named = 
 				{
@@ -6688,7 +6911,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 132,
+					uint Id = 135,
 				},
 				Named = 
 				{
@@ -6725,7 +6948,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 133,
+			uint Id = 136,
 		},
 		Named = 
 		{
@@ -6806,7 +7029,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 134,
+					uint Id = 137,
 				},
 				Named = 
 				{
