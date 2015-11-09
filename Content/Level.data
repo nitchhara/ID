@@ -122,7 +122,11 @@ Level =
 		},
 		Transform = 
 		{
+<<<<<<< HEAD
 			Vec3 Translation = [156.153107, -137.611145, 49.9999771],
+=======
+			Vec3 Translation = [-12.6767216, -126.163017, 50],
+>>>>>>> 046cc595063f160ab3e56e3d809641c5b6bc6fb8
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-008, 0, 1],
 		},
@@ -134,7 +138,11 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
+<<<<<<< HEAD
 			float Size = 74.08181,
+=======
+			float Size = 18.2683754,
+>>>>>>> 046cc595063f160ab3e56e3d809641c5b6bc6fb8
 		},
 		EditorCameraController = 
 		{
@@ -142,7 +150,11 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
+<<<<<<< HEAD
 			Vec3 LookTarget = [156.153107, -137.611145, -2.47673943e-005],
+=======
+			Vec3 LookTarget = [-12.6767216, -126.163017, 2.10826315e-007],
+>>>>>>> 046cc595063f160ab3e56e3d809641c5b6bc6fb8
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -1313,19 +1325,12 @@ Level =
 			},
 		},
 	},
-	Cog = 
+	ArchetypeInstance = 
 	{
+		string Name = "560c9670c789d448:MoveBlock",
 		LinkId = 
 		{
 			uint Id = 26,
-		},
-		Named = 
-		{
-			string Name = "MoveBlockTestSprite",
-		},
-		Archetyped = 
-		{
-			string Name = "560c9670c789d448:MoveBlock",
 		},
 		Transform = 
 		{
@@ -1333,69 +1338,22 @@ Level =
 			Vec3 Scale = [1, 0.5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.435000002, 0.435000002, 0.435000002, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5275aa4d802dd6dc:Square",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		BoxCollider = 
-		{
-			bool Ghost = false,
-			bool SendsMessages = true,
-			bool Seamless = true,
-			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
-			Vec3 Offset = [0, 0, 0],
-			Vec3 Size = [0.5, 0.5, 0.5],
-		},
-		RigidBody = 
-		{
-			bool Static = false,
-			bool Asleep = false,
-			bool Kinematic = false,
-			bool RotationLocked = true,
-			bool Mode2D = true,
-			bool AllowSleep = true,
-			bool Inherit2DMode = true,
-			Vec3 Velocity = [0, 0, 0],
-			Vec3 AngularVelocity = [0, 0, 0],
-		},
-		PlayerCanMoveObject = 
-		{
-			Enum InteractKey = S,
-		},
 		Area = 
 		{
 			Vec2 Size = [0.899999976, 0.899999976],
 			Location Origin = Center,
 		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 27,
-		},
 		Named = 
 		{
 			string Name = "MoveBlockTestSprite",
 		},
-		Archetyped = 
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "560c9670c789d448:MoveBlock",
+		LinkId = 
 		{
-			string Name = "560c9670c789d448:MoveBlock",
+			uint Id = 27,
 		},
 		Transform = 
 		{
@@ -1403,54 +1361,14 @@ Level =
 			Vec3 Scale = [1, 0.5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.435000002, 0.435000002, 0.435000002, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5275aa4d802dd6dc:Square",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		BoxCollider = 
-		{
-			bool Ghost = false,
-			bool SendsMessages = true,
-			bool Seamless = true,
-			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
-			Vec3 Offset = [0, 0, 0],
-			Vec3 Size = [0.5, 0.5, 0.5],
-		},
-		RigidBody = 
-		{
-			bool Static = false,
-			bool Asleep = false,
-			bool Kinematic = false,
-			bool RotationLocked = true,
-			bool Mode2D = true,
-			bool AllowSleep = true,
-			bool Inherit2DMode = true,
-			Vec3 Velocity = [0, 0, 0],
-			Vec3 AngularVelocity = [0, 0, 0],
-		},
-		PlayerCanMoveObject = 
-		{
-			Enum InteractKey = S,
-		},
 		Area = 
 		{
 			Vec2 Size = [0.899999976, 0.899999976],
 			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "MoveBlockTestSprite",
 		},
 	},
 	Cog = 
@@ -2965,19 +2883,12 @@ Level =
 			Location Origin = Center,
 		},
 	},
-	Cog = 
+	ArchetypeInstance = 
 	{
+		string Name = "5638d36996871c95:BatArchetype",
 		LinkId = 
 		{
 			uint Id = 58,
-		},
-		Named = 
-		{
-			string Name = "Bat",
-		},
-		Archetyped = 
-		{
-			string Name = "5638d36996871c95:BatArchetype",
 		},
 		Transform = 
 		{
@@ -2985,276 +2896,22 @@ Level =
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "561cce6ce4eac216:BatFlappingAnim",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
 		Area = 
 		{
 			Vec2 Size = [0.5, 0.5],
 			Location Origin = Center,
 		},
-		BoxCollider = 
-		{
-			bool Ghost = false,
-			bool SendsMessages = true,
-			bool Seamless = true,
-			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "5611966358cda6b8:Enemy",
-			Vec3 Offset = [0, 0, 0],
-			Vec3 Size = [0.25, 0.25, 0.5],
-		},
-		RigidBody = 
-		{
-			bool Static = false,
-			bool Asleep = false,
-			bool Kinematic = false,
-			bool RotationLocked = true,
-			bool Mode2D = true,
-			bool AllowSleep = true,
-			bool Inherit2DMode = true,
-			Vec3 Velocity = [0, 0, 0],
-			Vec3 AngularVelocity = [0, 0, 0],
-		},
-		IgnoreSpaceEffects = 
-		{
-			bool Drag = false,
-			bool Flow = false,
-			bool Force = false,
-			bool Gravity = true,
-			bool Thrust = false,
-			bool Vortex = false,
-			bool Wind = false,
-			bool Invalid = false,
-			bool Torque = false,
-			bool PointGravity = false,
-			bool PointForce = false,
-			bool Buoyancy = false,
-		},
-		BatLogic = 
-		{
-			Vec3 StartingPos = [96.3000031, -9.30000019, 1],
-			float WakeUpTime = 0.5,
-			float ChargeSpeed = 50,
-		},
-		Hierarchy = 
-		{
-			Cog = 
-			{
-				LinkId = 
-				{
-					uint Id = 59,
-				},
-				Named = 
-				{
-					string Name = "BasicParticleEffect",
-				},
-				Transform = 
-				{
-					Vec3 Translation = [0, 0, 0],
-					Vec3 Scale = [1, 1, 1],
-					Quat Rotation = [0, 0, 0, 1],
-				},
-				SpriteParticleSystem = 
-				{
-					bool Visible = true,
-					bool VisibilityCulling = true,
-					bool VisibilityEvents = true,
-					bool CastShadows = false,
-					SystemChildMode ChildMode = Independent,
-					SystemSpace SystemSpace = WorldSpace,
-					uint DrawOrder = 0,
-					float WarmUpTime = 0,
-					ParticleGeometry GeometryMode = Billboarded,
-					ParticleRenderMode RenderMode = Additive,
-					ParticleSortMode SortMode = Youngest,
-					ParticleAnimation ParticleAnimation = Single,
-					string Texture = "561cce1ee00af09e:BatEyes_0",
-					Vec4 Tint = [1, 1, 1, 0.699999988],
-					float VelocityScale = 1,
-					float LengthScale = 1,
-					float MaxParticleSize = 100,
-					Vec3 SystemSize = [4, 4, 4],
-				},
-				SphericalParticleEmitter = 
-				{
-					bool Active = true,
-					uint EmitCount = 0,
-					float EmitRate = 10,
-					float EmitVariance = 0,
-					float Size = 0.5,
-					float SizeVariance = 0,
-					float Lifetime = 0.5,
-					float LifetimeVariance = 0,
-					float Spin = 0,
-					float SpinVariance = 0,
-					bool RandomSpin = false,
-					float Fill = 1,
-					float EmitterVelocityPercent = 0,
-					Vec3 StartVelocity = [0, 0, 0],
-					Vec3 RandomVelocity = [0, 0, 0],
-					Vec3 TangentVelocity = [0, 0, 0],
-					Vec3 EmitterSize = [0, 0, 0],
-					bool FastMovingEmitter = false,
-				},
-				LinearParticleAnimator = 
-				{
-					Vec3 Force = [0, 0, 0],
-					Vec3 RandomForce = [0, 0, 0],
-					float Torque = 0,
-					float Growth = 0,
-					float Dampening = 0,
-					Vec3 Twist = [0, 0, 0],
-				},
-				ParticleColorAnimator = 
-				{
-					Vec4 Color0 = [1, 1, 1, 0],
-					Vec4 Color1 = [1, 1, 1, 1],
-					Vec4 Color2 = [1, 1, 1, 1],
-					Vec4 Color3 = [1, 1, 1, 1],
-					Vec4 Color4 = [1, 1, 1, 0],
-				},
-			},
-			Cog = 
-			{
-				LinkId = 
-				{
-					uint Id = 60,
-				},
-				Named = 
-				{
-					string Name = "BasicParticleEffect",
-				},
-				Transform = 
-				{
-					Vec3 Translation = [0, 0, 0],
-					Vec3 Scale = [1, 1, 1],
-					Quat Rotation = [0, 0, 0, 1],
-				},
-				SpriteParticleSystem = 
-				{
-					bool Visible = true,
-					bool VisibilityCulling = true,
-					bool VisibilityEvents = true,
-					bool CastShadows = false,
-					SystemChildMode ChildMode = Independent,
-					SystemSpace SystemSpace = WorldSpace,
-					uint DrawOrder = 0,
-					float WarmUpTime = 0,
-					ParticleGeometry GeometryMode = Billboarded,
-					ParticleRenderMode RenderMode = Additive,
-					ParticleSortMode SortMode = Youngest,
-					ParticleAnimation ParticleAnimation = Single,
-					string Texture = "561cce04e1ca6f68:Bat_0",
-					Vec4 Tint = [1, 1, 1, 0.100000001],
-					float VelocityScale = 1,
-					float LengthScale = 1,
-					float MaxParticleSize = 100,
-					Vec3 SystemSize = [4, 4, 4],
-				},
-				SphericalParticleEmitter = 
-				{
-					bool Active = true,
-					uint EmitCount = 0,
-					float EmitRate = 10,
-					float EmitVariance = 0,
-					float Size = 0.5,
-					float SizeVariance = 0,
-					float Lifetime = 0.5,
-					float LifetimeVariance = 0,
-					float Spin = 0,
-					float SpinVariance = 0,
-					bool RandomSpin = false,
-					float Fill = 1,
-					float EmitterVelocityPercent = 0,
-					Vec3 StartVelocity = [0, 0, 0],
-					Vec3 RandomVelocity = [0, 0, 0],
-					Vec3 TangentVelocity = [0, 0, 0],
-					Vec3 EmitterSize = [0, 0, 0],
-					bool FastMovingEmitter = false,
-				},
-				LinearParticleAnimator = 
-				{
-					Vec3 Force = [0, 0, 0],
-					Vec3 RandomForce = [0, 0, 0],
-					float Torque = 0,
-					float Growth = 0,
-					float Dampening = 0,
-					Vec3 Twist = [0, 0, 0],
-				},
-				ParticleColorAnimator = 
-				{
-					Vec4 Color0 = [1, 1, 1, 0],
-					Vec4 Color1 = [1, 1, 1, 1],
-					Vec4 Color2 = [1, 1, 1, 1],
-					Vec4 Color3 = [1, 1, 1, 1],
-					Vec4 Color4 = [1, 1, 1, 0],
-				},
-			},
-			Cog = 
-			{
-				LinkId = 
-				{
-					uint Id = 61,
-				},
-				Named = 
-				{
-					string Name = "BatEyes",
-				},
-				Transform = 
-				{
-					Vec3 Translation = [0, 0, 0],
-					Vec3 Scale = [1, 1, 1],
-					Quat Rotation = [0, 0, 0, 1],
-				},
-				Sprite = 
-				{
-					bool Visible = true,
-					bool VisibilityCulling = true,
-					bool VisibilityEvents = true,
-					bool CastShadows = false,
-					Vec4 Color = [1, 1, 1, 1],
-					BlendMode BlendMode = Additive,
-					SpriteGeometryMode GeometryMode = ZPlane,
-					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-					string SpriteSource = "561ddbce195f08ef:BatEyes",
-					bool RenderMask = true,
-					bool FlipX = false,
-					bool FlipY = false,
-					bool AnimationActive = true,
-					float AnimationSpeed = 1,
-					uint StartFrame = 0,
-				},
-			},
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 62,
-		},
 		Named = 
 		{
 			string Name = "Bat",
 		},
-		Archetyped = 
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
 		{
-			string Name = "5638d36996871c95:BatArchetype",
+			uint Id = 59,
 		},
 		Transform = 
 		{
@@ -3262,268 +2919,21 @@ Level =
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "561cce6ce4eac216:BatFlappingAnim",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
 		Area = 
 		{
 			Vec2 Size = [0.5, 0.5],
 			Location Origin = Center,
 		},
-		BoxCollider = 
+		Named = 
 		{
-			bool Ghost = false,
-			bool SendsMessages = true,
-			bool Seamless = true,
-			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "5611966358cda6b8:Enemy",
-			Vec3 Offset = [0, 0, 0],
-			Vec3 Size = [0.25, 0.25, 0.5],
-		},
-		RigidBody = 
-		{
-			bool Static = false,
-			bool Asleep = false,
-			bool Kinematic = false,
-			bool RotationLocked = true,
-			bool Mode2D = true,
-			bool AllowSleep = true,
-			bool Inherit2DMode = true,
-			Vec3 Velocity = [0, 0, 0],
-			Vec3 AngularVelocity = [0, 0, 0],
-		},
-		IgnoreSpaceEffects = 
-		{
-			bool Drag = false,
-			bool Flow = false,
-			bool Force = false,
-			bool Gravity = true,
-			bool Thrust = false,
-			bool Vortex = false,
-			bool Wind = false,
-			bool Invalid = false,
-			bool Torque = false,
-			bool PointGravity = false,
-			bool PointForce = false,
-			bool Buoyancy = false,
-		},
-		BatLogic = 
-		{
-			Vec3 StartingPos = [96.3000031, -9.30000019, 1],
-			float WakeUpTime = 0.5,
-			float ChargeSpeed = 50,
-		},
-		Hierarchy = 
-		{
-			Cog = 
-			{
-				LinkId = 
-				{
-					uint Id = 63,
-				},
-				Named = 
-				{
-					string Name = "BasicParticleEffect",
-				},
-				Transform = 
-				{
-					Vec3 Translation = [0, 0, 0],
-					Vec3 Scale = [1, 1, 1],
-					Quat Rotation = [0, 0, 0, 1],
-				},
-				SpriteParticleSystem = 
-				{
-					bool Visible = true,
-					bool VisibilityCulling = true,
-					bool VisibilityEvents = true,
-					bool CastShadows = false,
-					SystemChildMode ChildMode = Independent,
-					SystemSpace SystemSpace = WorldSpace,
-					uint DrawOrder = 0,
-					float WarmUpTime = 0,
-					ParticleGeometry GeometryMode = Billboarded,
-					ParticleRenderMode RenderMode = Additive,
-					ParticleSortMode SortMode = Youngest,
-					ParticleAnimation ParticleAnimation = Single,
-					string Texture = "561cce1ee00af09e:BatEyes_0",
-					Vec4 Tint = [1, 1, 1, 0.699999988],
-					float VelocityScale = 1,
-					float LengthScale = 1,
-					float MaxParticleSize = 100,
-					Vec3 SystemSize = [4, 4, 4],
-				},
-				SphericalParticleEmitter = 
-				{
-					bool Active = true,
-					uint EmitCount = 0,
-					float EmitRate = 10,
-					float EmitVariance = 0,
-					float Size = 0.5,
-					float SizeVariance = 0,
-					float Lifetime = 0.5,
-					float LifetimeVariance = 0,
-					float Spin = 0,
-					float SpinVariance = 0,
-					bool RandomSpin = false,
-					float Fill = 1,
-					float EmitterVelocityPercent = 0,
-					Vec3 StartVelocity = [0, 0, 0],
-					Vec3 RandomVelocity = [0, 0, 0],
-					Vec3 TangentVelocity = [0, 0, 0],
-					Vec3 EmitterSize = [0, 0, 0],
-					bool FastMovingEmitter = false,
-				},
-				LinearParticleAnimator = 
-				{
-					Vec3 Force = [0, 0, 0],
-					Vec3 RandomForce = [0, 0, 0],
-					float Torque = 0,
-					float Growth = 0,
-					float Dampening = 0,
-					Vec3 Twist = [0, 0, 0],
-				},
-				ParticleColorAnimator = 
-				{
-					Vec4 Color0 = [1, 1, 1, 0],
-					Vec4 Color1 = [1, 1, 1, 1],
-					Vec4 Color2 = [1, 1, 1, 1],
-					Vec4 Color3 = [1, 1, 1, 1],
-					Vec4 Color4 = [1, 1, 1, 0],
-				},
-			},
-			Cog = 
-			{
-				LinkId = 
-				{
-					uint Id = 64,
-				},
-				Named = 
-				{
-					string Name = "BasicParticleEffect",
-				},
-				Transform = 
-				{
-					Vec3 Translation = [0, 0, 0],
-					Vec3 Scale = [1, 1, 1],
-					Quat Rotation = [0, 0, 0, 1],
-				},
-				SpriteParticleSystem = 
-				{
-					bool Visible = true,
-					bool VisibilityCulling = true,
-					bool VisibilityEvents = true,
-					bool CastShadows = false,
-					SystemChildMode ChildMode = Independent,
-					SystemSpace SystemSpace = WorldSpace,
-					uint DrawOrder = 0,
-					float WarmUpTime = 0,
-					ParticleGeometry GeometryMode = Billboarded,
-					ParticleRenderMode RenderMode = Additive,
-					ParticleSortMode SortMode = Youngest,
-					ParticleAnimation ParticleAnimation = Single,
-					string Texture = "561cce04e1ca6f68:Bat_0",
-					Vec4 Tint = [1, 1, 1, 0.100000001],
-					float VelocityScale = 1,
-					float LengthScale = 1,
-					float MaxParticleSize = 100,
-					Vec3 SystemSize = [4, 4, 4],
-				},
-				SphericalParticleEmitter = 
-				{
-					bool Active = true,
-					uint EmitCount = 0,
-					float EmitRate = 10,
-					float EmitVariance = 0,
-					float Size = 0.5,
-					float SizeVariance = 0,
-					float Lifetime = 0.5,
-					float LifetimeVariance = 0,
-					float Spin = 0,
-					float SpinVariance = 0,
-					bool RandomSpin = false,
-					float Fill = 1,
-					float EmitterVelocityPercent = 0,
-					Vec3 StartVelocity = [0, 0, 0],
-					Vec3 RandomVelocity = [0, 0, 0],
-					Vec3 TangentVelocity = [0, 0, 0],
-					Vec3 EmitterSize = [0, 0, 0],
-					bool FastMovingEmitter = false,
-				},
-				LinearParticleAnimator = 
-				{
-					Vec3 Force = [0, 0, 0],
-					Vec3 RandomForce = [0, 0, 0],
-					float Torque = 0,
-					float Growth = 0,
-					float Dampening = 0,
-					Vec3 Twist = [0, 0, 0],
-				},
-				ParticleColorAnimator = 
-				{
-					Vec4 Color0 = [1, 1, 1, 0],
-					Vec4 Color1 = [1, 1, 1, 1],
-					Vec4 Color2 = [1, 1, 1, 1],
-					Vec4 Color3 = [1, 1, 1, 1],
-					Vec4 Color4 = [1, 1, 1, 0],
-				},
-			},
-			Cog = 
-			{
-				LinkId = 
-				{
-					uint Id = 65,
-				},
-				Named = 
-				{
-					string Name = "BatEyes",
-				},
-				Transform = 
-				{
-					Vec3 Translation = [0, 0, 0],
-					Vec3 Scale = [1, 1, 1],
-					Quat Rotation = [0, 0, 0, 1],
-				},
-				Sprite = 
-				{
-					bool Visible = true,
-					bool VisibilityCulling = true,
-					bool VisibilityEvents = true,
-					bool CastShadows = false,
-					Vec4 Color = [1, 1, 1, 1],
-					BlendMode BlendMode = Additive,
-					SpriteGeometryMode GeometryMode = ZPlane,
-					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-					string SpriteSource = "561ddbce195f08ef:BatEyes",
-					bool RenderMask = true,
-					bool FlipX = false,
-					bool FlipY = false,
-					bool AnimationActive = true,
-					float AnimationSpeed = 1,
-					uint StartFrame = 0,
-				},
-			},
+			string Name = "Bat",
 		},
 	},
 	Cog = 
 	{
 		LinkId = 
 		{
-			uint Id = 66,
+			uint Id = 60,
 		},
 		Named = 
 		{
@@ -3571,7 +2981,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 67,
+			uint Id = 61,
 		},
 		Named = 
 		{
@@ -3606,7 +3016,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 68,
+			uint Id = 62,
 		},
 		Named = 
 		{
@@ -3687,7 +3097,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 69,
+					uint Id = 63,
 				},
 				Named = 
 				{
@@ -3729,7 +3139,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 70,
+			uint Id = 64,
 		},
 		Named = 
 		{
@@ -3810,7 +3220,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 71,
+					uint Id = 65,
 				},
 				Named = 
 				{
@@ -3852,7 +3262,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 72,
+			uint Id = 66,
 		},
 		Named = 
 		{
@@ -3887,7 +3297,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 73,
+			uint Id = 67,
 		},
 		Named = 
 		{
@@ -3968,7 +3378,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 74,
+					uint Id = 68,
 				},
 				Named = 
 				{
@@ -4010,7 +3420,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 75,
+			uint Id = 69,
 		},
 		Named = 
 		{
@@ -4046,7 +3456,7 @@ Level =
 		string Name = "560c9667c1ff3939:GroundEnemy",
 		LinkId = 
 		{
-			uint Id = 76,
+			uint Id = 70,
 		},
 		Transform = 
 		{
@@ -4069,7 +3479,7 @@ Level =
 		string Name = "560c9667c1ff3939:GroundEnemy",
 		LinkId = 
 		{
-			uint Id = 77,
+			uint Id = 71,
 		},
 		Transform = 
 		{
@@ -4085,6 +3495,29 @@ Level =
 		Named = 
 		{
 			string Name = "GroundEnemy",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 72,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-14.589962, -122.027946, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
 		},
 	},
 },

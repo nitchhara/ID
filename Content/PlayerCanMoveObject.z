@@ -17,12 +17,8 @@ class PlayerCanMoveObject : ZilchComponent
     
     if (Zero.Keyboard.KeyIsDown(this.InteractKey) && dist <= 0.25 && player.MoonwalkDubstep.Grounded == true)
     {
-      player.RigidBody.Velocity = Real3((player.RigidBody.Velocity.X / 1.05), player.RigidBody.Velocity.Y, 0);
+      player.RigidBody.Velocity = Real3((player.RigidBody.Velocity.X / 1.1), 0, 0);
       this.Owner.RigidBody.Velocity = player.RigidBody.Velocity;
-    }
-    else
-    {
-      this.Owner.RigidBody.Velocity = Real3(this.Owner.RigidBody.Velocity.X, this.Owner.RigidBody.Velocity.Y , 0);
     }
   }
 }

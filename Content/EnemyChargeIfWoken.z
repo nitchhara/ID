@@ -6,25 +6,25 @@ class EnemyChargeIfWoken : ZilchComponent
   
   var Eyes : Cog;
   
-  var PatrolTime : Real = 6.0;
+  var PatrolTime : Real = 2.0;
   var PatrolTimer : Real = 0.0;
   var PatrolBool : Boolean = false;
   var PatrolActivate : Boolean = false;
   var RandomGen : Random = Random();
   var OverWakeTime : Real;
   
-  var ActionTime : Real = 1;
-  var ActionVel : Real = 0.5;
+  var ActionTime : Real = 0.85;
+  var ActionVel : Real = 1.1;
   
   var Player : Cog;
   
   var Activated : Boolean = false;
-  var ExtraChargeTime : Real = 2;
+  var ExtraChargeTime : Real = 0.5;
   var ChargeTimer : Real = 0.0;
   
   
   [Property]
-  var ChargeSpeed : Real = 40.0;
+  var ChargeSpeed : Real = 10.0;
   
   //Radius of the custom sphere collider for enemy detection
   var RadiusOfFlashlight : Real = 3.5;
@@ -75,15 +75,7 @@ class EnemyChargeIfWoken : ZilchComponent
     var castResultRight = this.Space.PhysicsSpace.CastRayFirst(downRayRight);
     var rightDistance = castResultRight.Distance;
     
-    if (this.SleepTimer >= this.WakeUpTime + 4)
-    {
-      this.OverWakeTime = 4;
-    }
-    else if (this.SleepTimer >= this.WakeUpTime + 3)
-    {
-      this.OverWakeTime = 3;
-    }
-    else if (this.SleepTimer >= this.WakeUpTime + 2)
+    if (this.SleepTimer >= this.WakeUpTime + 2)
     {
       this.OverWakeTime = 2;
     }
@@ -101,7 +93,7 @@ class EnemyChargeIfWoken : ZilchComponent
       this.Owner.Transform.Translation = Real3(this.Owner.Transform.Translation.X, this.Owner.Transform.Translation.Y, -1);
     }
     
-    if (this.SleepTimer > 0 || Math.Abs(this.Owner.RigidBody.Velocity.X) > 0 || Math.Abs(this.Owner.RigidBody.Velocity.Y) > 0)
+    if (this.SleepTimer > 0 || Math.Abs(this.Owner.RigidBody.Velocity.X) > 0 || Math.Abs(this.Owner.RigidBody.Velocity.Y) > 0 || this.PatrolBool == true)
     {
       this.Eyes.Sprite.Visible = true;
     }
@@ -126,15 +118,18 @@ class EnemyChargeIfWoken : ZilchComponent
     {
         this.Activated = true;
         
-        //Starts the timer
-        this.SleepTimer += event.Dt;
-        Console.WriteLine("`this.SleepTimer`");
+        if (this.SleepTimer <= (this.WakeUpTime + 2))
+        {
+          //Starts the timer
+          this.SleepTimer += event.Dt;
+          Console.WriteLine("`this.SleepTimer`");
+        }
         
         
         if (light.FlashlightSwitch.IsFlashlightOn == true && chargeDistance <= 10.0 && this.SleepTimer >= this.WakeUpTime)
         {
             //Applies velocity (X direction only) to the enemy
-            this.Owner.RigidBody.Velocity = Real3(((1.5 * (chargeDir.X)/2) * this.ChargeSpeed * event.Dt) + (chargeDirUnit * 0.2), this.Owner.RigidBody.Velocity.Y, 0.0);
+            this.Owner.RigidBody.Velocity = Real3(((1.5 * (chargeDir.X)/2) * this.ChargeSpeed * event.Dt) + (chargeDirUnit * 1.5), this.Owner.RigidBody.Velocity.Y, 0.0);
             Console.WriteLine("Charging!!!");
             
             this.PatrolBool = true;
@@ -152,7 +147,7 @@ class EnemyChargeIfWoken : ZilchComponent
         else
         {
             //Applies velocity (X direction only) to the enemy
-            this.Owner.RigidBody.Velocity = Real3(((1.5 * (chargeDir.X)/2) * this.ChargeSpeed * event.Dt) + (chargeDirUnit * 0.2), this.Owner.RigidBody.Velocity.Y, 0.0);
+            this.Owner.RigidBody.Velocity = Real3(((1.5 * (chargeDir.X)/2) * this.ChargeSpeed * event.Dt) + (chargeDirUnit * 1.5), this.Owner.RigidBody.Velocity.Y, 0.0);
             Console.WriteLine("Charging!!!");
         }
     }
@@ -174,6 +169,7 @@ class EnemyChargeIfWoken : ZilchComponent
     {
       this.PatrolActivate = true;
       this.PatrolAction();
+      this.PatrolBool = false;
     }
   }
   
@@ -188,24 +184,12 @@ class EnemyChargeIfWoken : ZilchComponent
         Action.Property(actionQueue, @this.Owner.RigidBody.Velocity, 
         Real3(this.Owner.RigidBody.Velocity.X + this.ActionVel, this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
         
-        Action.Delay(actionQueue, 1);
+        Action.Delay(actionQueue, 0.5);
         
         Action.Property(actionQueue, @this.Owner.RigidBody.Velocity, 
         Real3(this.Owner.RigidBody.Velocity.X - this.ActionVel, this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
         
-        Action.Delay(actionQueue, 1);
-        
-        if (this.OverWakeTime == 4)
-        {
-          Action.Call(actionQueue, this.PatrolAction);
-          this.OverWakeTime -= 1;
-        }
-        
-        if(this.OverWakeTime == 3)
-        {
-          Action.Call(actionQueue, this.PatrolAction);
-          this.OverWakeTime -= 1;
-        }
+        Action.Delay(actionQueue, 0.5);
         
         if(this.OverWakeTime == 2)
         {
@@ -224,26 +208,14 @@ class EnemyChargeIfWoken : ZilchComponent
       else if (randNum ==  2)
       {
         Action.Property(actionQueue, @this.Owner.RigidBody.Velocity, 
-        Real3(this.Owner.RigidBody.Velocity.X + this.ActionVel, this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
+        Real3(this.Owner.RigidBody.Velocity.X + (this.ActionVel + 0.25), this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
         
-        Action.Delay(actionQueue, 1);
+        Action.Delay(actionQueue, 0.5);
         
         Action.Property(actionQueue, @this.Owner.RigidBody.Velocity, 
-        Real3(this.Owner.RigidBody.Velocity.X - this.ActionVel, this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
+        Real3(this.Owner.RigidBody.Velocity.X - (this.ActionVel + 0.25), this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
         
-        Action.Delay(actionQueue, 1);
-        
-        if (this.OverWakeTime == 4)
-        {
-          Action.Call(actionQueue, this.PatrolAction);
-          this.OverWakeTime -= 1;
-        }
-        
-        if(this.OverWakeTime == 3)
-        {
-          Action.Call(actionQueue, this.PatrolAction);
-          this.OverWakeTime -= 1;
-        }
+        Action.Delay(actionQueue, 0.5);
         
         if(this.OverWakeTime == 2)
         {
@@ -262,26 +234,14 @@ class EnemyChargeIfWoken : ZilchComponent
       else if (randNum ==  3)
       {
         Action.Property(actionQueue, @this.Owner.RigidBody.Velocity, 
-        Real3(this.Owner.RigidBody.Velocity.X + this.ActionVel, this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
+        Real3(this.Owner.RigidBody.Velocity.X + (this.ActionVel + 0.4), this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
         
-        Action.Delay(actionQueue, 1);
+        Action.Delay(actionQueue, 0.5);
         
         Action.Property(actionQueue, @this.Owner.RigidBody.Velocity, 
-        Real3(this.Owner.RigidBody.Velocity.X - this.ActionVel, this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
+        Real3(this.Owner.RigidBody.Velocity.X - (this.ActionVel + 0.4), this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
         
-        Action.Delay(actionQueue, 1);
-        
-        if (this.OverWakeTime == 4)
-        {
-          Action.Call(actionQueue, this.PatrolAction);
-          this.OverWakeTime -= 1;
-        }
-        
-        if(this.OverWakeTime == 3)
-        {
-          Action.Call(actionQueue, this.PatrolAction);
-          this.OverWakeTime -= 1;
-        }
+        Action.Delay(actionQueue, 0.5);
         
         if(this.OverWakeTime == 2)
         {
@@ -300,26 +260,14 @@ class EnemyChargeIfWoken : ZilchComponent
       else if (randNum ==  4)
       {
         Action.Property(actionQueue, @this.Owner.RigidBody.Velocity, 
-        Real3(this.Owner.RigidBody.Velocity.X + this.ActionVel, this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
+        Real3(this.Owner.RigidBody.Velocity.X + (this.ActionVel - 0.15), this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
         
-        Action.Delay(actionQueue, 1);
+        Action.Delay(actionQueue, 0.5);
         
         Action.Property(actionQueue, @this.Owner.RigidBody.Velocity, 
-        Real3(this.Owner.RigidBody.Velocity.X - this.ActionVel, this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
+        Real3(this.Owner.RigidBody.Velocity.X - (this.ActionVel - 0.15), this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
         
-        Action.Delay(actionQueue, 1);
-        
-        if (this.OverWakeTime == 4)
-        {
-          Action.Call(actionQueue, this.PatrolAction);
-          this.OverWakeTime -= 1;
-        }
-        
-        if(this.OverWakeTime == 3)
-        {
-          Action.Call(actionQueue, this.PatrolAction);
-          this.OverWakeTime -= 1;
-        }
+        Action.Delay(actionQueue, 0.5);
         
         if(this.OverWakeTime == 2)
         {
