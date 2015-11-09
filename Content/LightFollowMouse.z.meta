@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "LightFollowMouse",
+		uint64 ResourceId = 5600d10b372b0f4c,
+	},
+},

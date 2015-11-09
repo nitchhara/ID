@@ -1,0 +1,30 @@
+class CameraFollow : ZilchComponent
+{
+  [Property]
+  var CameraOffsetY : Real = 2;
+  
+  [Property]
+  var FollowSpeed : Real = 100;
+  
+  var DirVec : Real3 = Real3();
+  var Player : Cog;
+  
+  function Initialize(init : CogInitializer)
+  {
+    var player = this.Space.FindObjectByName("Player");
+    var playerPos = player.Transform.Translation;
+    this.Player = player;
+    this.Owner.Transform.Translation = Real3(playerPos.X, playerPos.Y + this.CameraOffsetY, 40.0);
+    
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+      var player = this.Player;
+      var playerPos = player.Transform.Translation;
+      
+      this.DirVec = Real3(playerPos.X, playerPos.Y + this.CameraOffsetY, 40.0) - this.Owner.Transform.Translation;
+      this.Owner.RigidBody.Velocity = this.DirVec * this.FollowSpeed * event.Dt;
+  }
+}

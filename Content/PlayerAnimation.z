@@ -1,0 +1,62 @@
+class PlayerAnimation : ZilchComponent
+{
+    [Property]
+    var PlayerStand : SpriteSource = null;
+    
+    [Property]
+    var PlayerWalk : SpriteSource = null;
+    
+    [Property]
+    var PlayerJump : SpriteSource = null;
+    
+    [Property]
+    var LeftInput : Keys = Keys.A;
+    
+    [Property]
+    var RightInput : Keys = Keys.D;
+    
+    [Property]
+    var JumpInput : Keys = Keys.Space;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if(this.Owner.Sprite.SpriteSource == this.PlayerStand)
+        {
+            if(Zero.Keyboard.KeyIsDown(this.LeftInput) || Zero.Keyboard.KeyIsDown(this.RightInput))
+            {
+                this.Owner.Sprite.SpriteSource = this.PlayerWalk;
+            }
+            
+            if(Zero.Keyboard.KeyIsPressed(this.JumpInput) || Zero.Keyboard.KeyIsPressed(Keys.W))
+            {
+                this.Owner.Sprite.SpriteSource = this.PlayerJump;
+            }
+        }
+        
+        else if(this.Owner.Sprite.SpriteSource == this.PlayerWalk)
+        {
+            if(Zero.Keyboard.KeyIsDown(this.LeftInput) == false && Zero.Keyboard.KeyIsDown(this.RightInput) == false)
+            {
+                this.Owner.Sprite.SpriteSource = this.PlayerStand;
+            }
+            
+            if(Zero.Keyboard.KeyIsPressed(this.JumpInput) || Zero.Keyboard.KeyIsPressed(Keys.W))
+            {
+                this.Owner.Sprite.SpriteSource = this.PlayerJump;
+            }
+        }
+        
+        else if(this.Owner.Sprite.SpriteSource == this.PlayerJump)
+        {
+            if(this.Owner.MoonwalkDubstep.Grounded == true)
+            {
+                this.Owner.Sprite.SpriteSource = this.PlayerStand;
+            }
+        }
+    }
+}

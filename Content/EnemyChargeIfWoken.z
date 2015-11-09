@@ -1,0 +1,339 @@
+class EnemyChargeIfWoken : ZilchComponent
+{
+  [Property]
+  var WakeUpTime : Real = 2.0;
+  var SleepTimer : Real = 0.0;
+  
+  var Eyes : Cog;
+  
+  var PatrolTime : Real = 6.0;
+  var PatrolTimer : Real = 0.0;
+  var PatrolBool : Boolean = false;
+  var PatrolActivate : Boolean = false;
+  var RandomGen : Random = Random();
+  var OverWakeTime : Real;
+  
+  var ActionTime : Real = 1;
+  var ActionVel : Real = 0.5;
+  
+  var Player : Cog;
+  
+  var Activated : Boolean = false;
+  var ExtraChargeTime : Real = 2;
+  var ChargeTimer : Real = 0.0;
+  
+  
+  [Property]
+  var ChargeSpeed : Real = 40.0;
+  
+  //Radius of the custom sphere collider for enemy detection
+  var RadiusOfFlashlight : Real = 3.5;
+  
+  function Initialize(init : CogInitializer)
+  {
+      Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+      Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+      this.Eyes = this.Owner.FindChildByName("GroundEyes");
+      this.Player = this.Space.FindObjectByName("Player");
+  }
+
+  function OnCollisionStarted(event : CollisionEvent)
+  {
+    if (event.OtherObject.Name == "Player")
+    {
+      this.Space.ReloadLevel();
+    }
+  }
+  
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //Gets the distance between the light and the enemy
+    var light = this.Space.FindObjectByName("Light");
+    var lightPos = light.Transform.Translation;
+    var ownerPos = this.Owner.Transform.Translation;
+    var collVector = lightPos - ownerPos;
+    var collDistance = Math.Sqrt((collVector.X * collVector.X) + (collVector.Y * collVector.Y));
+    
+    //creates a ray at the owner's location with a downward direction and gets the length
+    var downRayCenter = Ray();
+    downRayCenter.Start = Real3(this.Owner.Transform.Translation.X, this.Owner.Transform.Translation.Y, 0);
+    downRayCenter.Direction = Real3(0.0, -1.0, 0.0);
+    var castResultCenter = this.Space.PhysicsSpace.CastRayFirst(downRayCenter);
+    var centerDistance = castResultCenter.Distance;
+    
+    //creates a ray at the owner's location (but left offset) with a downward direction and gets the length
+    var downRayLeft = Ray();
+    downRayLeft.Start = Real3(this.Owner.Transform.Translation.X - 0.5, this.Owner.Transform.Translation.Y, 0.0);
+    downRayLeft.Direction = Real3(0.0, -1.0, 0.0);
+    var castResultLeft = this.Space.PhysicsSpace.CastRayFirst(downRayLeft);
+    var leftDistance = castResultLeft.Distance;
+    
+    //creates a ray at the owner's location (but right offset) with a downward direction and gets the length
+    var downRayRight = Ray();
+    downRayRight.Start = Real3(this.Owner.Transform.Translation.X + 0.5, this.Owner.Transform.Translation.Y, 0.0);
+    downRayRight.Direction = Real3(0.0, -1.0, 0.0);
+    var castResultRight = this.Space.PhysicsSpace.CastRayFirst(downRayRight);
+    var rightDistance = castResultRight.Distance;
+    
+    if (this.SleepTimer >= this.WakeUpTime + 4)
+    {
+      this.OverWakeTime = 4;
+    }
+    else if (this.SleepTimer >= this.WakeUpTime + 3)
+    {
+      this.OverWakeTime = 3;
+    }
+    else if (this.SleepTimer >= this.WakeUpTime + 2)
+    {
+      this.OverWakeTime = 2;
+    }
+    else if (this.SleepTimer >= this.WakeUpTime + 1)
+    {
+      this.OverWakeTime = 1;
+    }
+    
+    if (this.SleepTimer >= this.WakeUpTime || Math.Abs(this.Owner.RigidBody.Velocity.X) > 0 || Math.Abs(this.Owner.RigidBody.Velocity.Y) > 0)
+    {
+      this.Owner.Transform.Translation = Real3(this.Owner.Transform.Translation.X, this.Owner.Transform.Translation.Y, 0);
+    }
+    else
+    {
+      this.Owner.Transform.Translation = Real3(this.Owner.Transform.Translation.X, this.Owner.Transform.Translation.Y, -1);
+    }
+    
+    if (this.SleepTimer > 0 || Math.Abs(this.Owner.RigidBody.Velocity.X) > 0 || Math.Abs(this.Owner.RigidBody.Velocity.Y) > 0)
+    {
+      this.Eyes.Sprite.Visible = true;
+    }
+    else
+    {
+      this.Eyes.Sprite.Visible = false;
+    }
+    
+    //Gets the distance and direction between the enemy and the player
+    var player = this.Player;
+    var playerPos = player.Transform.Translation;
+    var chargeDir = playerPos - ownerPos;
+    var chargeDistance = Math.Sqrt((chargeDir.X * chargeDir.X) + (chargeDir.Y * chargeDir.Y));
+    
+    var chargeDirUnit = chargeDir.X/chargeDistance.X;
+    
+    if (centerDistance > 0.55 && rightDistance > 0.55 && leftDistance > 0.55)
+    {
+        this.Owner.RigidBody.Velocity = Real3(0.0, this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z);
+    }
+    else if(collDistance <= this.RadiusOfFlashlight && light.FlashlightSwitch.IsFlashlightOn == true)
+    {
+        this.Activated = true;
+        
+        //Starts the timer
+        this.SleepTimer += event.Dt;
+        Console.WriteLine("`this.SleepTimer`");
+        
+        
+        if (light.FlashlightSwitch.IsFlashlightOn == true && chargeDistance <= 10.0 && this.SleepTimer >= this.WakeUpTime)
+        {
+            //Applies velocity (X direction only) to the enemy
+            this.Owner.RigidBody.Velocity = Real3(((1.5 * (chargeDir.X)/2) * this.ChargeSpeed * event.Dt) + (chargeDirUnit * 0.2), this.Owner.RigidBody.Velocity.Y, 0.0);
+            Console.WriteLine("Charging!!!");
+            
+            this.PatrolBool = true;
+            this.PatrolActivate = false;
+        }
+    }
+    else if (this.Activated == true)
+    {
+        this.ChargeTimer += event.Dt;
+        if (this.ChargeTimer > this.ExtraChargeTime)
+        {
+            this.Activated = false;
+            this.ChargeTimer = 0.0;
+        }
+        else
+        {
+            //Applies velocity (X direction only) to the enemy
+            this.Owner.RigidBody.Velocity = Real3(((1.5 * (chargeDir.X)/2) * this.ChargeSpeed * event.Dt) + (chargeDirUnit * 0.2), this.Owner.RigidBody.Velocity.Y, 0.0);
+            Console.WriteLine("Charging!!!");
+        }
+    }
+    else if(this.SleepTimer > 0.0)
+    {
+        if(Math.Abs(this.SleepTimer) <= 0.1)
+        {
+            this.SleepTimer = 0.0;
+            Console.WriteLine("`this.SleepTimer`");
+        }
+        else
+        {
+            this.SleepTimer -= event.Dt;
+            Console.WriteLine("`this.SleepTimer`");
+        }
+    }
+    
+    if (this.PatrolBool == true && this.SleepTimer == 0 && this.PatrolActivate == false)
+    {
+      this.PatrolActivate = true;
+      this.PatrolAction();
+    }
+  }
+  
+  function PatrolAction()
+  {
+    var actionQueue = Action.Sequence(this.Owner.Actions);
+    
+    var randNum = this.RandomGen.DieRoll(4);
+    
+    if (randNum ==  1)
+      {
+        Action.Property(actionQueue, @this.Owner.RigidBody.Velocity, 
+        Real3(this.Owner.RigidBody.Velocity.X + this.ActionVel, this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
+        
+        Action.Delay(actionQueue, 1);
+        
+        Action.Property(actionQueue, @this.Owner.RigidBody.Velocity, 
+        Real3(this.Owner.RigidBody.Velocity.X - this.ActionVel, this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
+        
+        Action.Delay(actionQueue, 1);
+        
+        if (this.OverWakeTime == 4)
+        {
+          Action.Call(actionQueue, this.PatrolAction);
+          this.OverWakeTime -= 1;
+        }
+        
+        if(this.OverWakeTime == 3)
+        {
+          Action.Call(actionQueue, this.PatrolAction);
+          this.OverWakeTime -= 1;
+        }
+        
+        if(this.OverWakeTime == 2)
+        {
+          Action.Call(actionQueue, this.PatrolAction);
+          this.OverWakeTime -= 1;
+        }
+        
+        if(this.OverWakeTime == 1)
+        {
+          Action.Call(actionQueue, this.PatrolAction);
+          this.OverWakeTime -= 1;
+        }
+        
+        Console.WriteLine("1");
+      }
+      else if (randNum ==  2)
+      {
+        Action.Property(actionQueue, @this.Owner.RigidBody.Velocity, 
+        Real3(this.Owner.RigidBody.Velocity.X + this.ActionVel, this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
+        
+        Action.Delay(actionQueue, 1);
+        
+        Action.Property(actionQueue, @this.Owner.RigidBody.Velocity, 
+        Real3(this.Owner.RigidBody.Velocity.X - this.ActionVel, this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
+        
+        Action.Delay(actionQueue, 1);
+        
+        if (this.OverWakeTime == 4)
+        {
+          Action.Call(actionQueue, this.PatrolAction);
+          this.OverWakeTime -= 1;
+        }
+        
+        if(this.OverWakeTime == 3)
+        {
+          Action.Call(actionQueue, this.PatrolAction);
+          this.OverWakeTime -= 1;
+        }
+        
+        if(this.OverWakeTime == 2)
+        {
+          Action.Call(actionQueue, this.PatrolAction);
+          this.OverWakeTime -= 1;
+        }
+        
+        if(this.OverWakeTime == 1)
+        {
+          Action.Call(actionQueue, this.PatrolAction);
+          this.OverWakeTime -= 1;
+        }
+        
+        Console.WriteLine("2");
+      }
+      else if (randNum ==  3)
+      {
+        Action.Property(actionQueue, @this.Owner.RigidBody.Velocity, 
+        Real3(this.Owner.RigidBody.Velocity.X + this.ActionVel, this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
+        
+        Action.Delay(actionQueue, 1);
+        
+        Action.Property(actionQueue, @this.Owner.RigidBody.Velocity, 
+        Real3(this.Owner.RigidBody.Velocity.X - this.ActionVel, this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
+        
+        Action.Delay(actionQueue, 1);
+        
+        if (this.OverWakeTime == 4)
+        {
+          Action.Call(actionQueue, this.PatrolAction);
+          this.OverWakeTime -= 1;
+        }
+        
+        if(this.OverWakeTime == 3)
+        {
+          Action.Call(actionQueue, this.PatrolAction);
+          this.OverWakeTime -= 1;
+        }
+        
+        if(this.OverWakeTime == 2)
+        {
+          Action.Call(actionQueue, this.PatrolAction);
+          this.OverWakeTime -= 1;
+        }
+        
+        if(this.OverWakeTime == 1)
+        {
+          Action.Call(actionQueue, this.PatrolAction);
+          this.OverWakeTime -= 1;
+        }
+        
+        Console.WriteLine("3");
+      }
+      else if (randNum ==  4)
+      {
+        Action.Property(actionQueue, @this.Owner.RigidBody.Velocity, 
+        Real3(this.Owner.RigidBody.Velocity.X + this.ActionVel, this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
+        
+        Action.Delay(actionQueue, 1);
+        
+        Action.Property(actionQueue, @this.Owner.RigidBody.Velocity, 
+        Real3(this.Owner.RigidBody.Velocity.X - this.ActionVel, this.Owner.RigidBody.Velocity.Y, this.Owner.RigidBody.Velocity.Z), this.ActionTime, Ease.Linear);
+        
+        Action.Delay(actionQueue, 1);
+        
+        if (this.OverWakeTime == 4)
+        {
+          Action.Call(actionQueue, this.PatrolAction);
+          this.OverWakeTime -= 1;
+        }
+        
+        if(this.OverWakeTime == 3)
+        {
+          Action.Call(actionQueue, this.PatrolAction);
+          this.OverWakeTime -= 1;
+        }
+        
+        if(this.OverWakeTime == 2)
+        {
+          Action.Call(actionQueue, this.PatrolAction);
+          this.OverWakeTime -= 1;
+        }
+        
+        if(this.OverWakeTime == 1)
+        {
+          Action.Call(actionQueue, this.PatrolAction);
+          this.OverWakeTime -= 1;
+        }
+        
+        Console.WriteLine("4");
+      }
+  }
+}

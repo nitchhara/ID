@@ -1,0 +1,19 @@
+class CheckpointLogic : ZilchComponent
+{
+  var CheckpointPos : Real3 = Real3();
+  function Initialize(init : CogInitializer)
+  {
+    this.CheckpointPos = this.Owner.Transform.Translation;
+    
+    Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+  }
+
+  function OnCollisionStarted(event : CollisionEvent)
+  {
+    if (event.OtherObject.Name == "Player")
+    {
+      this.GameSession.LatestCheckpointPos.LatestCheckpointPos = this.Owner.Transform.Translation;
+    }
+  }
+}
+

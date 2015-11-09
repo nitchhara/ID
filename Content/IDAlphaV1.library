@@ -1,0 +1,7 @@
+ContentLibrary = 
+{
+	string Name = "IDAlphaV1",
+	uint64 LibraryId = 56fb1c6e50c24704,
+	string SourceControlType = "",
+	bool ReadOnly = false,
+},

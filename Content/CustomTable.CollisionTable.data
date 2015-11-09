@@ -1,0 +1,34 @@
+CollisionTable = 
+{
+	Array RegisteredGroups = 
+	[
+		"4e740859314e5515:DefaultGroup",
+		"5611966358cda6b8:Enemy",
+		"563ca06b1e4a6bc9:Checkpoint",
+		"563ca0b40721f1a3:Player",
+	],
+	Array CollisionFilters = 
+	[
+		{
+			string TypeA = "563ca06b1e4a6bc9:Checkpoint",
+			string TypeB = "563ca0b40721f1a3:Player",
+			bool SkipResolution = false,
+			bool SkipDetectingCollision = false,
+			bool StartEvent = false,
+			bool EndEvent = false,
+			bool PersistedEvent = false,
+			bool PreSolveEvent = false,
+		},
+		{
+			string TypeA = "5611966358cda6b8:Enemy",
+			string TypeB = "5611966358cda6b8:Enemy",
+			bool SkipResolution = true,
+			bool SkipDetectingCollision = false,
+			bool StartEvent = false,
+			bool EndEvent = false,
+			bool PersistedEvent = false,
+			bool PreSolveEvent = false,
+		},
+	],
+	bool AutoRegister = true,
+},

@@ -1,0 +1,22 @@
+class JumpingLight : ZilchComponent
+{
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.LevelSettings, Events.JumpEvent, this.OnJumpEvent);
+    this.Owner.Sprite.Visible = false;
+  }
+
+  function OnJumpEvent(event : JumpEvent)
+  {
+    var playerPos = event.Pos;
+    var vector = playerPos - this.Owner.Transform.WorldTranslation;
+    var vecLength = Math.Sqrt((vector.X * vector.X) + (vector.Y * vector.Y));
+    Console.WriteLine("Local : `this.Owner.Transform.Translation`");
+    Console.WriteLine("World : `this.Owner.Transform.WorldTranslation`");
+    
+    if (vecLength < 5)
+    {
+      this.Owner.Sprite.Visible = !this.Owner.Sprite.Visible;
+    }
+  }
+}

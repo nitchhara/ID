@@ -1,0 +1,12 @@
+BinaryContent = 
+{
+	BinaryBuilder = 
+	{
+		string Name = "Ground",
+		uint64 ResourceId = 5607dc8107aa23e8,
+		string LoaderType = "TilePaletteSource",
+		uint Version = 0,
+		string FilterTag = "",
+		string ResourceOwner = "",
+	},
+},

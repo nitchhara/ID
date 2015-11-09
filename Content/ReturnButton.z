@@ -1,0 +1,42 @@
+class ReturnButton : ZilchComponent
+{
+  [Dependency]
+  var Sprite: Sprite;
+  
+  var Player : Cog;
+  
+  var StartScreenPos : Real3 = Real3(0, 0, 40);
+  
+  function Initialize(init : CogInitializer)
+  {
+    this.Player = this.Space.FindObjectByName("Player");
+    
+    Zero.Mouse.Cursor = Cursor.Invisible;
+    Zero.Connect(this.Owner, Events.MouseEnter, this.OnMouseEnter);
+    Zero.Connect(this.Owner, Events.MouseExit, this.OnMouseExit);
+    Zero.Connect(this.Owner, Events.MouseDown, this.OnMouseDown);
+    Zero.Connect(this.Owner, Events.MouseUp, this.OnMouseUp);
+    
+    this.Owner.Sprite.Color = this.Owner.Sprite.Color + Real4(0, 0, 0, 0.50 - this.Owner.Sprite.Color.W);
+  }
+
+  function OnMouseUp(event : ViewportMouseEvent)
+  {
+    this.Player.Transform.Translation = this.StartScreenPos;
+  }
+
+  function OnMouseDown(event : ViewportMouseEvent)
+  {
+    this.Owner.Sprite.Color = this.Owner.Sprite.Color + Real4(0, 0, 0, 1 - this.Owner.Sprite.Color.W);
+  }
+
+  function OnMouseExit(event : ViewportMouseEvent)
+  {
+    this.Owner.Sprite.Color = this.Owner.Sprite.Color + Real4(0, 0, 0, 0.50 - this.Owner.Sprite.Color.W);
+  }
+
+  function OnMouseEnter(event : ViewportMouseEvent)
+  {
+    this.Owner.Sprite.Color = this.Owner.Sprite.Color + Real4(0, 0, 0, 0.75 - this.Owner.Sprite.Color.W);
+  }
+}

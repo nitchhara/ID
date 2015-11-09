@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "JumpingLight",
+		uint64 ResourceId = 5638a6751ea0c3a0,
+	},
+},

@@ -1,0 +1,19 @@
+class LightFollowMouse : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        //gets the position of the mouse on the screen
+        var mouseScreenPos = Zero.Mouse.ScreenPosition;
+        
+        //converts the mouse screen position coordinates to world coordinates
+        var worldMousePos = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(mouseScreenPos, 0.0);
+        
+        //sets the object's position to the world mouse position, but offset so that the mouse is centered in the flashlight circle
+        this.Owner.Transform.Translation = worldMousePos;
+    }
+}

@@ -1,0 +1,123 @@
+Cog = 
+{
+	LinkId = 
+	{
+		uint Id = 1,
+	},
+	Named = 
+	{
+		string Name = "GroundEnemy",
+	},
+	Archetyped = 
+	{
+		string Name = "560c9667c1ff3939:GroundEnemy",
+	},
+	Transform = 
+	{
+		Vec3 Translation = [77.7970352, -8.50938702, 0],
+		Vec3 Scale = [1, 1, 1],
+		Quat Rotation = [0, 0, 0, 1],
+	},
+	Sprite = 
+	{
+		bool Visible = true,
+		bool VisibilityCulling = true,
+		bool VisibilityEvents = true,
+		bool CastShadows = false,
+		Vec4 Color = [0.519999981, 0, 0.389999986, 1],
+		BlendMode BlendMode = Alpha,
+		SpriteGeometryMode GeometryMode = ZPlane,
+		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+		string SpriteSource = "5275aa4d802dd6dc:Square",
+		bool RenderMask = false,
+		bool FlipX = false,
+		bool FlipY = false,
+		bool AnimationActive = true,
+		float AnimationSpeed = 1,
+		uint StartFrame = 0,
+	},
+	Area = 
+	{
+		Vec2 Size = [1, 1],
+		Location Origin = Center,
+	},
+	RigidBody = 
+	{
+		bool Static = false,
+		bool Asleep = false,
+		bool Kinematic = false,
+		bool RotationLocked = true,
+		bool Mode2D = true,
+		bool AllowSleep = true,
+		bool Inherit2DMode = true,
+		Vec3 Velocity = [0, 0, 0],
+		Vec3 AngularVelocity = [0, 0, 0],
+	},
+	EnemyChargeIfWoken = 
+	{
+		float WakeUpTime = 1,
+		float ChargeSpeed = 40,
+	},
+	MassOverride = 
+	{
+		bool Active = true,
+		float invMass = 0.00200000009,
+		Vec3 invInertiaX = [0, 0, 0],
+		Vec3 invInertiaY = [0, 0, 0],
+		Vec3 invInertiaZ = [0, 0, 0],
+		Vec3 LocalCenterOfMass = [0, 0, 0],
+	},
+	BoxCollider = 
+	{
+		bool Ghost = false,
+		bool SendsMessages = true,
+		bool Seamless = true,
+		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+		string SerializedGroupName = "5611966358cda6b8:Enemy",
+		Vec3 Offset = [0, 0, 0],
+		Vec3 Size = [0.5, 0.5, 0.5],
+	},
+	Hierarchy = 
+	{
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 2,
+			},
+			Named = 
+			{
+				string Name = "GroundEyes",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [0.0301589966, 0.12007308, 0.5],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Sprite = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				bool VisibilityEvents = true,
+				bool CastShadows = false,
+				Vec4 Color = [1, 1, 1, 1],
+				BlendMode BlendMode = Additive,
+				SpriteGeometryMode GeometryMode = ZPlane,
+				string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+				string SpriteSource = "561ddbce195f08ef:BatEyes",
+				bool RenderMask = true,
+				bool FlipX = false,
+				bool FlipY = false,
+				bool AnimationActive = true,
+				float AnimationSpeed = 1,
+				uint StartFrame = 0,
+			},
+			Area = 
+			{
+				Vec2 Size = [2.5, 0.75],
+				Location Origin = Center,
+			},
+		},
+	},
+},

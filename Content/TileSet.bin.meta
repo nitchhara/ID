@@ -1,0 +1,12 @@
+BinaryContent = 
+{
+	BinaryBuilder = 
+	{
+		string Name = "TileSet",
+		uint64 ResourceId = 561dc5a79f21fa57,
+		string LoaderType = "TilePaletteSource",
+		uint Version = 0,
+		string FilterTag = "",
+		string ResourceOwner = "",
+	},
+},

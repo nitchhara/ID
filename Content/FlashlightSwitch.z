@@ -1,0 +1,56 @@
+class FlashlightSwitch : ZilchComponent
+{
+    var IsFlashlightOn : Boolean = true;
+    
+    [Property]
+    var FlashlightOn : SpriteSource = null;
+    
+    [Property]
+    var FlashlightOff : SpriteSource = null;
+    
+    [Property]
+    var SpriteOff : SpriteSource = null;
+    
+    var WhirrImage : Cog;
+    var SecondLight : Cog;
+    var ThirdLight : Cog;
+    
+    
+    
+    function Initialize(init : CogInitializer)
+    {
+        //Finds the camera object in the game space
+        var gameCamera = this.Space.FindObjectByName("Camera");
+        this.WhirrImage = this.Space.FindObjectByName("WhirrImage");
+        this.SecondLight = this.Space.FindObjectByName("LightMiddle");
+        this.ThirdLight = this.Space.FindObjectByName("LightCenter");
+        
+        Zero.Connect(gameCamera, Events.LeftMouseDown, this.OnLeftMouseDown);
+    }
+
+    function OnLeftMouseDown(event : ViewportMouseEvent)
+    {
+        //If the "Flashlight" is currently on
+            //Changes the sprite to the "flashlight on" overlay
+            //Sets the flashlight boolean value to true so the next time the left mouse button is pressed, the current sprite source is known
+        //If the "Flashlight" is currently on
+            //Changes the sprite to the "flashlight off" overlay
+            //Sets the flashlight boolean value to false
+        if (this.IsFlashlightOn == false)
+        {
+            this.Owner.Sprite.SpriteSource = this.FlashlightOn;
+            this.WhirrImage.Sprite.Visible = false;
+            this.SecondLight.Sprite.Visible = true;
+            this.ThirdLight.Sprite.Visible = true;
+            this.IsFlashlightOn = true;
+        }
+        else if (this.IsFlashlightOn == true)
+        {
+            this.Owner.Sprite.SpriteSource = this.FlashlightOff;
+            this.WhirrImage.Sprite.Visible = true;
+            this.SecondLight.Sprite.Visible = false;
+            this.ThirdLight.Sprite.Visible = false;
+            this.IsFlashlightOn = false;
+        }
+    }
+}

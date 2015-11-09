@@ -1,0 +1,11 @@
+class CameraReset : ZilchComponent
+{
+    var Camera : Cog;
+    
+    function Initialize(init : CogInitializer)
+    {
+        this.Camera = this.Space.FindObjectByName("Camera");
+        this.Camera.Transform.Translation = Real3(this.Owner.Transform.Translation.X, 
+        this.Owner.Transform.Translation.Y, 40.0);
+    }
+}

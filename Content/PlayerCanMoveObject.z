@@ -1,0 +1,28 @@
+class PlayerCanMoveObject : ZilchComponent
+{
+  [Property]
+  var InteractKey : Keys = Keys.S;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    var player = this.Space.FindObjectByName("Player");
+    var playerPos = player.Transform.Translation;
+    var distVec = playerPos - this.Owner.Transform.Translation;
+    var dist = Math.Sqrt((distVec.X * distVec.X) * (distVec.Y * distVec.Y));
+    
+    if (Zero.Keyboard.KeyIsDown(this.InteractKey) && dist <= 0.25 && player.MoonwalkDubstep.Grounded == true)
+    {
+      player.RigidBody.Velocity = Real3((player.RigidBody.Velocity.X / 1.05), player.RigidBody.Velocity.Y, 0);
+      this.Owner.RigidBody.Velocity = player.RigidBody.Velocity;
+    }
+    else
+    {
+      this.Owner.RigidBody.Velocity = Real3(this.Owner.RigidBody.Velocity.X, this.Owner.RigidBody.Velocity.Y , 0);
+    }
+  }
+}

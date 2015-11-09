@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "FlashlightSwitch",
+		uint64 ResourceId = 56edb50fc34eec7f,
+	},
+},

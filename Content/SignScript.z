@@ -1,0 +1,28 @@
+class SignScript : ZilchComponent
+{
+    [Property]
+    var Text : CogPath;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+        Zero.Connect(this.Owner, Events.CollisionEnded, this.OnCollisionEnded);
+        this.Text.Cog.SpriteText.Visible = false;
+    }
+
+    function OnCollisionEnded(event : CollisionEvent)
+    {
+        if (event.OtherObject.Name == "Player")
+        {
+            this.Text.Cog.SpriteText.Visible = false;
+        }
+    }
+
+    function OnCollisionStarted(event : CollisionEvent)
+    {
+        if (event.OtherObject.Name == "Player")
+        {
+            this.Text.Cog.SpriteText.Visible = true;
+        }
+    }
+}

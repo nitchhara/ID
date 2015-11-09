@@ -1,0 +1,222 @@
+
+class JumpEvent : ZilchEvent
+{
+  var Pos : Real3;
+  sends JumpEvent : JumpEvent;
+}
+
+class MoonwalkDubstep : ZilchComponent
+{
+  [Property]
+  var JumpKey : Keys = Keys.Space;
+  
+  [Property]
+  var JumpStrength : Real = 250.0;
+  
+  [Property]
+  var LeftKey : Keys = Keys.A;
+  
+  [Property]
+  var RightKey : Keys = Keys.D;
+  
+  [Property]
+  var AccelerationSpeed : Real = 10.0;
+  
+  var SlopedAcceleration : Real = 30.0;
+  
+  [Property]
+  var WalkSpeed : Real = 3.0;
+  
+  [Property]
+  var RunSpeed : Real = 6.0;
+  
+  [Property]
+  var HalfPlayerHeight : Real = 0.5;
+  
+  var MaxSpeed : Real = 3.0;
+  
+  var SideRayXOffset : Real = 0.2;
+  
+  var Grounded : Boolean = false;
+  
+  var WhirrImage : Cog;
+  var Light : Cog;
+  
+  function Initialize(init : CogInitializer)
+  {
+    var whirrImage = this.Space.FindObjectByName("WhirrImage");
+    this.WhirrImage = whirrImage;
+    var light = this.Space.FindObjectByName("Light");
+    this.Light = light;
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    
+    this.Owner.Transform.Translation = this.GameSession.LatestCheckpointPos.LatestCheckpointPos;
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    var playerPos = this.Owner.Transform.Translation;
+    var slopeDirVecCL = Real3(0.0, 0.0, 0.0);
+    var slopeDirVecCR = Real3(0.0, 0.0, 0.0);
+    var acceleration = this.AccelerationSpeed;
+    
+    //creates a ray at the player's location with a downward direction and gets the length
+    var downRayCenter = Ray();
+    downRayCenter.Start = Real3(playerPos.X, playerPos.Y, 0.0);
+    downRayCenter.Direction = Real3(0.0, -1.0, 0.0);
+    var castResultCenter = this.Space.PhysicsSpace.CastRayFirst(downRayCenter);
+    var centerDistance = castResultCenter.Distance;
+    
+    //creates a ray at the player's location (but left offset) with a downward direction and gets the length
+    var downRayLeft = Ray();
+    downRayLeft.Start = Real3(playerPos.X - this.SideRayXOffset, playerPos.Y, 0.0);
+    downRayLeft.Direction = Real3(0.0, -1.0, 0.0);
+    var castResultLeft = this.Space.PhysicsSpace.CastRayFirst(downRayLeft);
+    var leftDistance = castResultLeft.Distance;
+    
+    //creates a ray at the player's location (but right offset) with a downward direction and gets the length
+    var downRayRight = Ray();
+    downRayRight.Start = Real3(playerPos.X + this.SideRayXOffset, playerPos.Y, 0.0);
+    downRayRight.Direction = Real3(0.0, -1.0, 0.0);
+    var castResultRight = this.Space.PhysicsSpace.CastRayFirst(downRayRight);
+    var rightDistance = castResultRight.Distance;
+    
+    //checks that the distance between the player's origin and the object that the ray hits is less than half the player's size
+    if (centerDistance <= this.HalfPlayerHeight 
+    || leftDistance <= this.HalfPlayerHeight 
+    || rightDistance <= this.HalfPlayerHeight)
+    {
+      if ((Zero.Keyboard.KeyIsPressed(this.JumpKey) || Zero.Keyboard.KeyIsPressed(Keys.W))
+      && (Math.Abs(leftDistance -  centerDistance) < 0.25 || Math.Abs(rightDistance -  centerDistance) < 0.25))
+      {
+        this.Owner.RigidBody.Velocity += Real3(0.0, this.JumpStrength, 0.0) * event.Dt;
+        
+        var jumpEvent : JumpEvent = new JumpEvent();
+        jumpEvent.Pos = this.Owner.Transform.Translation;
+        this.LevelSettings.DispatchEvent(Events.JumpEvent, jumpEvent);
+        
+      }
+      this.Grounded = true;
+    }
+    else
+    {
+      this.Grounded = false;
+    }
+    
+    /*********** Calculations for slope of the ground beneath the player ********************
+      CL stands for "from center to left"
+      CR stands for "from center to right"
+      slopeMagn stands for "slope magnitude"
+    *****************************************************************************************/
+    if (this.Grounded == true)
+    {
+      if (centerDistance <= (3 * this.HalfPlayerHeight))
+      {
+        if (leftDistance <= (this.HalfPlayerHeight) && rightDistance <= (this.HalfPlayerHeight * 4))
+        {
+          slopeDirVecCL = Real3(-this.SideRayXOffset, (leftDistance - centerDistance), 0);
+          var slopeMagnCL = Math.Sqrt((slopeDirVecCL.X * slopeDirVecCL.X) + (slopeDirVecCL.Y * slopeDirVecCL.Y));
+          slopeDirVecCL = Real3((slopeDirVecCL.X/slopeMagnCL), (slopeDirVecCL.Y/slopeMagnCL), 0);
+        }
+        
+        if (rightDistance <= (this.HalfPlayerHeight) && leftDistance <= (this.HalfPlayerHeight * 4))
+        {
+          slopeDirVecCR = Real3(this.SideRayXOffset, (rightDistance - centerDistance), 0);
+          var slopeMagnCR = Math.Sqrt((slopeDirVecCR.X * slopeDirVecCR.X) + (slopeDirVecCR.Y * slopeDirVecCR.Y));
+          slopeDirVecCR = Real3((slopeDirVecCR.X/slopeMagnCR), (slopeDirVecCR.Y/slopeMagnCR), 0);
+        }
+      }
+    }
+    
+    /*********** Increases acceleration when going up a hill ********************************/
+    if (leftDistance < centerDistance && this.Owner.RigidBody.Velocity.X < 0)
+    {
+      acceleration = this.SlopedAcceleration;
+    }
+    else if (rightDistance < centerDistance && this.Owner.RigidBody.Velocity.X > 0)
+    {
+      acceleration = this.SlopedAcceleration;
+    }
+    else
+    {
+      acceleration = this.AccelerationSpeed;
+    }
+    
+    /*********** Checks if the player is running, changes the max speed accordingly *********/
+    if (Zero.Keyboard.KeyIsDown(Keys.Shift))
+    {
+        this.MaxSpeed = this.RunSpeed;
+    }
+    else
+    {
+        this.MaxSpeed = this.WalkSpeed;
+    }
+    
+    /*********** Making the player move *****************************************************/
+    var x = this.Owner.RigidBody.Velocity.X;
+    var y = this.Owner.RigidBody.Velocity.Y;
+    var trueVelocity = Math.Sqrt((x * x) + (y * y));
+    
+    if (Math.Abs(trueVelocity) <= this.MaxSpeed)
+    {
+      if (Zero.Keyboard.KeyIsDown(this.LeftKey))
+      {
+        this.Owner.RigidBody.Velocity -= Real3(1.0 * acceleration, (slopeDirVecCL.Y), 0.0) * event.Dt;
+        this.Owner.Sprite.FlipX = true;
+      }
+      
+      if (Zero.Keyboard.KeyIsDown(this.RightKey))
+      {
+        this.Owner.RigidBody.Velocity += Real3(1.0 * acceleration, -(slopeDirVecCL.Y), 0.0) * event.Dt;
+        this.Owner.Sprite.FlipX = false;
+      }
+    }
+    else if (Math.Abs(trueVelocity) > this.MaxSpeed)
+    {
+      if (this.Owner.RigidBody.Velocity.X > 0)
+      {
+        if (Zero.Keyboard.KeyIsDown(this.LeftKey))
+        {
+          this.Owner.RigidBody.Velocity -= Real3(1.0 * acceleration, (slopeDirVecCL.Y), 0.0) * event.Dt;
+          this.Owner.Sprite.FlipX = true;
+        }
+      }
+      
+      if (this.Owner.RigidBody.Velocity.X < 0)
+      {
+        if (Zero.Keyboard.KeyIsDown(this.RightKey))
+        {
+          this.Owner.RigidBody.Velocity += Real3(1.0 * acceleration, -(slopeDirVecCL.Y), 0.0) * event.Dt;
+          this.Owner.Sprite.FlipX = false;
+        }
+      }
+    }
+    
+    /*********** That Whirr Image Stuff FOR THE FEELS ***************************************/
+    
+    if (this.Owner.Sprite.FlipX == true)
+    {
+      this.WhirrImage.Transform.Translation = Real3(playerPos.X + 0.04, playerPos.Y - 0.32, 0);
+      this.WhirrImage.Sprite.FlipX = true;
+    }
+    else if (this.Owner.Sprite.FlipX == false)
+    {
+      this.WhirrImage.Transform.Translation = Real3(playerPos.X - 0.08, playerPos.Y - 0.32, 0);
+      this.WhirrImage.Sprite.FlipX = false;
+    }
+    
+    if (this.Light.FlashlightSwitch.IsFlashlightOn == true)
+    {
+      this.WhirrImage.Sprite.Visible = false; 
+    }
+    else if (Math.Abs(this.Owner.RigidBody.Velocity) == Real3(0, 0, 0) && this.Light.FlashlightSwitch.IsFlashlightOn == false)
+    {
+      this.WhirrImage.Sprite.Visible = true;
+    }
+    else if ((Math.Abs(this.Owner.RigidBody.Velocity.X) > 0 || Math.Abs(this.Owner.RigidBody.Velocity.Y) > 0 && this.Light.FlashlightSwitch.IsFlashlightOn == false))
+    {
+      this.WhirrImage.Sprite.Visible = true;
+    }
+    
+  }
+}

@@ -1,0 +1,17 @@
+class ResetToCheckpoint : ZilchComponent
+{
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+  
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    var player = this.Space.FindObjectByName("Player");
+    
+    if (Zero.Keyboard.KeyIsPressed(Keys.R))
+    {
+      this.Space.ReloadLevel();
+    }
+  }
+}

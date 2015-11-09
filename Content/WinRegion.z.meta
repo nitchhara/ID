@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "WinRegion",
+		uint64 ResourceId = 5611c09b3410f8f7,
+	},
+},

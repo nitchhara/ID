@@ -1,0 +1,28 @@
+class ToggleCursor : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        //Checks the player's component "InvisibleMouse" to see if the mouse cursor is currently invisible
+        if (this.Owner.InvisibleMouse.IsMouseInvisible == true)
+        {
+            if(Zero.Keyboard.KeyIsPressed(Keys.Q))
+            {
+                //Makes the mouse cursor visible
+                this.Owner.InvisibleMouse.IsMouseInvisible = false;
+            }
+        }
+        else if (this.Owner.InvisibleMouse.IsMouseInvisible == false)
+        {
+            if(Zero.Keyboard.KeyIsPressed(Keys.Q))
+            {
+                //Makes the mouse cursor invisible
+                this.Owner.InvisibleMouse.IsMouseInvisible = true;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+class WinRegion : ZilchComponent
+{
+    var StartLevel : Level = Level.Find("StartMenu");
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+    }
+
+    function OnCollisionStarted(event : CollisionEvent)
+    {
+        if (event.OtherObject.Name == "Player")
+        {
+            this.Space.LoadLevel(this.StartLevel);
+        }
+    }
+}

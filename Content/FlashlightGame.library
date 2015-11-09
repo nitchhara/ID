@@ -1,0 +1,7 @@
+ContentLibrary = 
+{
+	string Name = "FlashlightGame",
+	uint64 LibraryId = 5607d2a4db027ad9,
+	string SourceControlType = "",
+	bool ReadOnly = false,
+},

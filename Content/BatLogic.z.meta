@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "BatLogic",
+		uint64 ResourceId = 563a2dcdfb794726,
+	},
+},

@@ -1,0 +1,7780 @@
+Level = 
+{
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 1,
+		},
+		Named = 
+		{
+			string Name = "LevelSettings",
+		},
+		GravityEffect = 
+		{
+			bool Active = true,
+			bool WakeUpOnChange = false,
+			bool LocalSpaceDirection = true,
+			float Strength = 10,
+			Vec3 Direction = [0, -1, 0],
+		},
+		DragEffect = 
+		{
+			bool Active = true,
+			bool WakeUpOnChange = false,
+			float Drag = 0.699999988,
+		},
+		CameraViewport = 
+		{
+			bool Background = true,
+			Vec2 Offset = [0, 0],
+			Vec2 Size = [1, 1],
+			int Layer = 0,
+			bool Active = true,
+			bool Blocking = true,
+			CogPath Renderer = 
+			{
+				string Path = ".",
+				bool ErrorOnResolveToNull = false,
+				bool ErrorOnPathCantCompute = false,
+				bool ErrorOnDirectLinkFail = false,
+				bool UpdateCogOnPathChange = true,
+				bool UpdatePathOnCogChange = true,
+				bool UpdateCogOnInitialize = true,
+				bool ResolvedNullErrorOccurred = false,
+				uint ResolvedCog = 1,
+				CogPathPreference PathPreference0 = CogRelative,
+				CogPathPreference PathPreference1 = SpaceRelative,
+				CogPathPreference PathPreference2 = Absolute,
+			},
+			CogPath Camera = 
+			{
+				string Path = ":/Camera",
+				bool ErrorOnResolveToNull = false,
+				bool ErrorOnPathCantCompute = false,
+				bool ErrorOnDirectLinkFail = false,
+				bool UpdateCogOnPathChange = true,
+				bool UpdatePathOnCogChange = true,
+				bool UpdateCogOnInitialize = true,
+				bool ResolvedNullErrorOccurred = false,
+				uint ResolvedCog = 2,
+				CogPathPreference PathPreference0 = CogRelative,
+				CogPathPreference PathPreference1 = SpaceRelative,
+				CogPathPreference PathPreference2 = Absolute,
+			},
+			ViewportScaling Scaling = Letterbox,
+			Vec2 Resolution = [1280, 720],
+			Vec4 MarginColor = [0, 0, 0, 1],
+		},
+		GridDraw = 
+		{
+			bool Active = true,
+			bool HalfCellOffset = false,
+			float CellSize = 1,
+			GridAxis Axis = ZAxis,
+			int Lines = 100,
+			bool DrawAxisOrigins = true,
+			bool AlwaysDrawInEditor = true,
+			bool DrawInGame = false,
+			Vec4 GridColor = [0.5, 0.5, 0.5, 0.400000006],
+			Vec4 GridHiLight = [0, 0, 0, 0.400000006],
+			int HilightInterval = 10,
+			bool FollowEditorCamera = false,
+		},
+		DeferredRenderer = 
+		{
+			Vec4 ClearColor = [0, 0, 0, 1],
+			bool DrawNonVisible = false,
+			bool DrawDebugObjects = true,
+			bool DrawEditorIcons = true,
+			bool EditorIconDepth = true,
+			bool Hdr = true,
+			bool Shadows = true,
+			bool AntiAliasing = false,
+			bool Refraction = true,
+			bool Reflections = true,
+			string ReflectionEnvironmentName = "4fab71e8bcb7a8ce:DefaultTexture",
+			bool GodRays = true,
+			bool RenderMasks = false,
+			bool Glow = false,
+			float GlowThreshold = 1,
+		},
+		LatestCheckpointPos = 
+		{
+		},
+		InvisibleMouse = 
+		{
+			bool IsMouseInvisible = true,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 3,
+		},
+		Named = 
+		{
+			string Name = "EditorCamera",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0, 0, 50],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [-0, -1.09278471e-008, 0, 1],
+		},
+		Camera = 
+		{
+			ProjectionMode ProjectionMode = Orthographic,
+			Facing Facing = NegativeZ,
+			CameraTransparentSort TransparentSort = ZDepth,
+			float FieldOfView = 45,
+			float NearPlane = 0.5,
+			float FarPlane = 500,
+			float Size = 13.5335522,
+		},
+		EditorCameraController = 
+		{
+			ControlMode ControlMode = ZPlane,
+			float LookDistance = 50,
+			float VerticalAngle = 0,
+			float HorizontalAngle = 0,
+			Vec3 LookTarget = [0, 0, 0],
+			float MoveSensitivity = 1,
+		},
+		EditorRenderer = 
+		{
+			Vec4 ClearColor = [0.155000001, 0.155000001, 0.155000001, 1],
+			bool DrawNonVisible = true,
+			bool DrawDebugObjects = true,
+			bool DrawEditorIcons = true,
+			bool Wireframe = false,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 2,
+		},
+		Named = 
+		{
+			string Name = "Camera",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0, 0, 40],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Camera = 
+		{
+			ProjectionMode ProjectionMode = Orthographic,
+			Facing Facing = NegativeZ,
+			CameraTransparentSort TransparentSort = InheritFromSpace,
+			float FieldOfView = 45,
+			float NearPlane = 0.5,
+			float FarPlane = 200,
+			float Size = 20,
+		},
+		SoundListener = 
+		{
+			bool Active = true,
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 4,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [68.5, -31.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 5,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [58.5, -37, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 6,
+		},
+		Named = 
+		{
+			string Name = "Player",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0, 0, 0],
+			Vec3 Scale = [0.5, 0.5, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "561dc48c59b91079:RobotIdleAnim",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		Area = 
+		{
+			Vec2 Size = [2, 2],
+			Location Origin = Center,
+		},
+		CapsuleCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "5610c4173ae8d2f7:PlayerMaterial",
+			string SerializedGroupName = "563ca0b40721f1a3:Player",
+			Vec3 Offset = [0.100000001, 0.100000001, 0],
+			float Radius = 0.100000001,
+			float Height = 1.5,
+			uint Direction = 1,
+		},
+		PlayerAnimation = 
+		{
+			string PlayerStand = "561dc48c59b91079:RobotIdleAnim",
+			string PlayerWalk = "561dc442ac9eeb34:RobotWalkingAnim",
+			string PlayerJump = "561dc48c59b91079:RobotIdleAnim",
+			Enum LeftInput = A,
+			Enum RightInput = D,
+			Enum JumpInput = Space,
+		},
+		ResetToCheckpoint = 
+		{
+		},
+		MoonwalkDubstep = 
+		{
+			Enum JumpKey = Space,
+			float JumpStrength = 250,
+			Enum LeftKey = A,
+			Enum RightKey = D,
+			float AccelerationSpeed = 10,
+			float WalkSpeed = 3,
+			float RunSpeed = 6,
+			float HalfPlayerHeight = 0.5,
+		},
+		CameraReset = 
+		{
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 7,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [144, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 8,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [122, -36, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 9,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [97, -37, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 10,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [145.5, -30, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 11,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [156, -33, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 12,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [58.5, -31.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 13,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [70, -32.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "560c9667c1ff3939:GroundEnemy",
+		LinkId = 
+		{
+			uint Id = 14,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [78, -35, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 15,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [154, -32.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 16,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+		Archetyped = 
+		{
+			string Name = "560c9667c1ff3939:GroundEnemy",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [143.5, -35.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.519999981, 0, 0.389999986, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Area = 
+		{
+			Vec2 Size = [0.800000012, 0.800000012],
+			Location Origin = Center,
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		EnemyChargeIfWoken = 
+		{
+			float WakeUpTime = 1,
+			float ChargeSpeed = 40,
+		},
+		MassOverride = 
+		{
+			bool Active = true,
+			float invMass = 0.00200000009,
+			Vec3 invInertiaX = [0, 0, 0],
+			Vec3 invInertiaY = [0, 0, 0],
+			Vec3 invInertiaZ = [0, 0, 0],
+			Vec3 LocalCenterOfMass = [0, 0, 0],
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "5611966358cda6b8:Enemy",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.400000006, 0.400000006, 0.5],
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 17,
+				},
+				Named = 
+				{
+					string Name = "GroundEyes",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.0301589966, 0.12007308, 0.5],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Additive,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "561ddbce195f08ef:BatEyes",
+					bool RenderMask = true,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [2.5, 0.75],
+					Location Origin = Center,
+				},
+			},
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 18,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [149.5, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 19,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [69, -37.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 20,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [94, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638aed55162fc7f:Checkpoint",
+		LinkId = 
+		{
+			uint Id = 21,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [4, 0, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Checkpoint1",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 22,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [75.5, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638aed55162fc7f:Checkpoint",
+		LinkId = 
+		{
+			uint Id = 23,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [129.5, -14, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Checkpoint1",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 24,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [101, -9, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 25,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [153, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 26,
+		},
+		Named = 
+		{
+			string Name = "WhirrImage",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [1, 0, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Additive,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "563a2b1db458ecc3:WhirrMaybeAnim",
+			bool RenderMask = true,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 27,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [69.5, -37, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 28,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [146.5, -30, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 29,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [122.5, -36.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 30,
+		},
+		Named = 
+		{
+			string Name = "Sprite",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [63.5, -7.5, 0],
+			Vec3 Scale = [2, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5612aeb5a140b258:water",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 31,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [141, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 32,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [114.5, -9.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 33,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [159, -32, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 34,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+		Archetyped = 
+		{
+			string Name = "560c9667c1ff3939:GroundEnemy",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [63.5, -37.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.519999981, 0, 0.389999986, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Area = 
+		{
+			Vec2 Size = [0.800000012, 0.800000012],
+			Location Origin = Center,
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		EnemyChargeIfWoken = 
+		{
+			float WakeUpTime = 1,
+			float ChargeSpeed = 40,
+		},
+		MassOverride = 
+		{
+			bool Active = true,
+			float invMass = 0.00200000009,
+			Vec3 invInertiaX = [0, 0, 0],
+			Vec3 invInertiaY = [0, 0, 0],
+			Vec3 invInertiaZ = [0, 0, 0],
+			Vec3 LocalCenterOfMass = [0, 0, 0],
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "5611966358cda6b8:Enemy",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.400000006, 0.400000006, 0.5],
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 35,
+				},
+				Named = 
+				{
+					string Name = "GroundEyes",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.0301589966, 0.12007308, 0.5],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Additive,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "561ddbce195f08ef:BatEyes",
+					bool RenderMask = true,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [2.5, 0.75],
+					Location Origin = Center,
+				},
+			},
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 36,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [139.5, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 37,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [129, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 38,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [62, -31.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 39,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [135, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 40,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [136, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 41,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [144, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 42,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [124, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 43,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [94, -8.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 44,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [148.5, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 45,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [148, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 46,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [132.5, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 47,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [154, -32.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 48,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [127.5, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 49,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [138, -31, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 50,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [59, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 51,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [141.5, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 52,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [144.5, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 53,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [49, -31, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 54,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [44, -31.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "560c9667c1ff3939:GroundEnemy",
+		LinkId = 
+		{
+			uint Id = 55,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [101, -35, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 56,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [130.5, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 57,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [72.5, -32, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 58,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [145, -31, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 59,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [146, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 60,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [59.5, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 61,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [139, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 62,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [54, -31, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 63,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [138.5, -30, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 64,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [140.5, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 65,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [98, -37, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 66,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [47.5, -33, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 67,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [136.5, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 68,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [130.5, -31, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 69,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [125, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 70,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [147.5, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 71,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [131.5, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 72,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [133.5, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 73,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [107.5, -37.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 74,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [124.5, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638aed55162fc7f:Checkpoint",
+		LinkId = 
+		{
+			uint Id = 75,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [92, -11.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Checkpoint1",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 76,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [63.5, -31.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 77,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+		Archetyped = 
+		{
+			string Name = "560c9667c1ff3939:GroundEnemy",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [64, -37.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.519999981, 0, 0.389999986, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Area = 
+		{
+			Vec2 Size = [0.800000012, 0.800000012],
+			Location Origin = Center,
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		EnemyChargeIfWoken = 
+		{
+			float WakeUpTime = 1,
+			float ChargeSpeed = 40,
+		},
+		MassOverride = 
+		{
+			bool Active = true,
+			float invMass = 0.00200000009,
+			Vec3 invInertiaX = [0, 0, 0],
+			Vec3 invInertiaY = [0, 0, 0],
+			Vec3 invInertiaZ = [0, 0, 0],
+			Vec3 LocalCenterOfMass = [0, 0, 0],
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "5611966358cda6b8:Enemy",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.400000006, 0.400000006, 0.5],
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 78,
+				},
+				Named = 
+				{
+					string Name = "GroundEyes",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.0301589966, 0.12007308, 0.5],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Additive,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "561ddbce195f08ef:BatEyes",
+					bool RenderMask = true,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [2.5, 0.75],
+					Location Origin = Center,
+				},
+			},
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 79,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [159.5, -32.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 80,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+		Archetyped = 
+		{
+			string Name = "560c9667c1ff3939:GroundEnemy",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [68.5, -37.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.519999981, 0, 0.389999986, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Area = 
+		{
+			Vec2 Size = [0.800000012, 0.800000012],
+			Location Origin = Center,
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		EnemyChargeIfWoken = 
+		{
+			float WakeUpTime = 1,
+			float ChargeSpeed = 40,
+		},
+		MassOverride = 
+		{
+			bool Active = true,
+			float invMass = 0.00200000009,
+			Vec3 invInertiaX = [0, 0, 0],
+			Vec3 invInertiaY = [0, 0, 0],
+			Vec3 invInertiaZ = [0, 0, 0],
+			Vec3 LocalCenterOfMass = [0, 0, 0],
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "5611966358cda6b8:Enemy",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.400000006, 0.400000006, 0.5],
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 81,
+				},
+				Named = 
+				{
+					string Name = "GroundEyes",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.0301589966, 0.12007308, 0.5],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Additive,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "561ddbce195f08ef:BatEyes",
+					bool RenderMask = true,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [2.5, 0.75],
+					Location Origin = Center,
+				},
+			},
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "560c9667c1ff3939:GroundEnemy",
+		LinkId = 
+		{
+			uint Id = 82,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [103.5, -12, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 83,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [73.5, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "560c9667c1ff3939:GroundEnemy",
+		LinkId = 
+		{
+			uint Id = 84,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [104.5, -35, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 85,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [151.5, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "560c9667c1ff3939:GroundEnemy",
+		LinkId = 
+		{
+			uint Id = 86,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [66.5, -35, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 87,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [154.5, -32, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 88,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [99.5, -9, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 89,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [63.5, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 90,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [56.5, -32, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 91,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [97, -37.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 92,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [45, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638aed55162fc7f:Checkpoint",
+		LinkId = 
+		{
+			uint Id = 93,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [90, -35, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Checkpoint1",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 94,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [66, -31, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 95,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [67, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 96,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [57, -31, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 97,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [90, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 98,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+		Archetyped = 
+		{
+			string Name = "560c9667c1ff3939:GroundEnemy",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [113, -14.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.519999981, 0, 0.389999986, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Area = 
+		{
+			Vec2 Size = [0.800000012, 0.800000012],
+			Location Origin = Center,
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		EnemyChargeIfWoken = 
+		{
+			float WakeUpTime = 1,
+			float ChargeSpeed = 40,
+		},
+		MassOverride = 
+		{
+			bool Active = true,
+			float invMass = 0.00200000009,
+			Vec3 invInertiaX = [0, 0, 0],
+			Vec3 invInertiaY = [0, 0, 0],
+			Vec3 invInertiaZ = [0, 0, 0],
+			Vec3 LocalCenterOfMass = [0, 0, 0],
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "5611966358cda6b8:Enemy",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.400000006, 0.400000006, 0.5],
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 99,
+				},
+				Named = 
+				{
+					string Name = "GroundEyes",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.0301589966, 0.12007308, 0.5],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Additive,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "561ddbce195f08ef:BatEyes",
+					bool RenderMask = true,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [2.5, 0.75],
+					Location Origin = Center,
+				},
+			},
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 100,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+		Archetyped = 
+		{
+			string Name = "560c9667c1ff3939:GroundEnemy",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [140.5, -35.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.519999981, 0, 0.389999986, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Area = 
+		{
+			Vec2 Size = [0.800000012, 0.800000012],
+			Location Origin = Center,
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		EnemyChargeIfWoken = 
+		{
+			float WakeUpTime = 1,
+			float ChargeSpeed = 40,
+		},
+		MassOverride = 
+		{
+			bool Active = true,
+			float invMass = 0.00200000009,
+			Vec3 invInertiaX = [0, 0, 0],
+			Vec3 invInertiaY = [0, 0, 0],
+			Vec3 invInertiaZ = [0, 0, 0],
+			Vec3 LocalCenterOfMass = [0, 0, 0],
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "5611966358cda6b8:Enemy",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.400000006, 0.400000006, 0.5],
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 101,
+				},
+				Named = 
+				{
+					string Name = "GroundEyes",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.0301589966, 0.12007308, 0.5],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Additive,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "561ddbce195f08ef:BatEyes",
+					bool RenderMask = true,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [2.5, 0.75],
+					Location Origin = Center,
+				},
+			},
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638aed55162fc7f:Checkpoint",
+		LinkId = 
+		{
+			uint Id = 102,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [55, -35, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Checkpoint1",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 103,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [50, -33, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 104,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [123.5, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 105,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [87, -37, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 106,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [154.5, -33, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 107,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [50, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 108,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [64, -37.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 109,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [107, -37.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 110,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [88.5, -37, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 111,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [54.5, -31.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 112,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+		Archetyped = 
+		{
+			string Name = "560c9667c1ff3939:GroundEnemy",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [106, -14.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.519999981, 0, 0.389999986, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Area = 
+		{
+			Vec2 Size = [0.800000012, 0.800000012],
+			Location Origin = Center,
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		EnemyChargeIfWoken = 
+		{
+			float WakeUpTime = 1,
+			float ChargeSpeed = 40,
+		},
+		MassOverride = 
+		{
+			bool Active = true,
+			float invMass = 0.00200000009,
+			Vec3 invInertiaX = [0, 0, 0],
+			Vec3 invInertiaY = [0, 0, 0],
+			Vec3 invInertiaZ = [0, 0, 0],
+			Vec3 LocalCenterOfMass = [0, 0, 0],
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "5611966358cda6b8:Enemy",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.400000006, 0.400000006, 0.5],
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 113,
+				},
+				Named = 
+				{
+					string Name = "GroundEyes",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.0301589966, 0.12007308, 0.5],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Additive,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "561ddbce195f08ef:BatEyes",
+					bool RenderMask = true,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [2.5, 0.75],
+					Location Origin = Center,
+				},
+			},
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 114,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [75.5, -32, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 115,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [149.5, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 116,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [137.5, -30, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 117,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [59.5, -37, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 118,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [140, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 119,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [69.5, -37.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 120,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [132, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 121,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [65.5, -32.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 122,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [146, -31, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 123,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+		Archetyped = 
+		{
+			string Name = "560c9667c1ff3939:GroundEnemy",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [87.5, -37.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.519999981, 0, 0.389999986, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Area = 
+		{
+			Vec2 Size = [0.800000012, 0.800000012],
+			Location Origin = Center,
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		EnemyChargeIfWoken = 
+		{
+			float WakeUpTime = 1,
+			float ChargeSpeed = 40,
+		},
+		MassOverride = 
+		{
+			bool Active = true,
+			float invMass = 0.00200000009,
+			Vec3 invInertiaX = [0, 0, 0],
+			Vec3 invInertiaY = [0, 0, 0],
+			Vec3 invInertiaZ = [0, 0, 0],
+			Vec3 LocalCenterOfMass = [0, 0, 0],
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "5611966358cda6b8:Enemy",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.400000006, 0.400000006, 0.5],
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 124,
+				},
+				Named = 
+				{
+					string Name = "GroundEyes",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.0301589966, 0.12007308, 0.5],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Additive,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "561ddbce195f08ef:BatEyes",
+					bool RenderMask = true,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [2.5, 0.75],
+					Location Origin = Center,
+				},
+			},
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 125,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [133, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 126,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [88, -37.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 127,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [151, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 128,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [133, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 129,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [116, -9, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 130,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [123, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 131,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [123.5, -36, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 132,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [98.5, -37.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 133,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [147, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "560c9667c1ff3939:GroundEnemy",
+		LinkId = 
+		{
+			uint Id = 134,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [81.5, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 135,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [157, -33, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 136,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [132.5, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 137,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [59.5, -37.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 138,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [152, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 139,
+		},
+		Named = 
+		{
+			string Name = "Sprite",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [22, -3.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5612aeb5a140b258:water",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 140,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [137.5, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 141,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+		Archetyped = 
+		{
+			string Name = "560c9667c1ff3939:GroundEnemy",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [126, -36.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.519999981, 0, 0.389999986, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Area = 
+		{
+			Vec2 Size = [0.800000012, 0.800000012],
+			Location Origin = Center,
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		EnemyChargeIfWoken = 
+		{
+			float WakeUpTime = 1,
+			float ChargeSpeed = 40,
+		},
+		MassOverride = 
+		{
+			bool Active = true,
+			float invMass = 0.00200000009,
+			Vec3 invInertiaX = [0, 0, 0],
+			Vec3 invInertiaY = [0, 0, 0],
+			Vec3 invInertiaZ = [0, 0, 0],
+			Vec3 LocalCenterOfMass = [0, 0, 0],
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "5611966358cda6b8:Enemy",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.400000006, 0.400000006, 0.5],
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 142,
+				},
+				Named = 
+				{
+					string Name = "GroundEyes",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.0301589966, 0.12007308, 0.5],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Additive,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "561ddbce195f08ef:BatEyes",
+					bool RenderMask = true,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [2.5, 0.75],
+					Location Origin = Center,
+				},
+			},
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 143,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [97.5, -37.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 144,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [107, -36.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 145,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [54, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 146,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [107.5, -37, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 147,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [131.5, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 148,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [136, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 149,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [134, -30, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 150,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [148, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 151,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [134.5, -31, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 152,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [117.5, -9, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 153,
+		},
+		Named = 
+		{
+			string Name = "LampLight",
+		},
+		Archetyped = 
+		{
+			string Name = "563e6b596a557249:JumpingLight",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [138.5, -32.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Additive,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "560579aac256133b:NewFlashlightOn",
+			bool RenderMask = true,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Area = 
+		{
+			Vec2 Size = [6, 4],
+			Location Origin = Center,
+		},
+		JumpingLight = 
+		{
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 154,
+				},
+				Named = 
+				{
+					string Name = "LampTop",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0, -0.139572144, 0],
+					Vec3 Scale = [0.800000012, 0.800000012, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [0.88499999, 0.743399918, 0, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [0.5, 0.5],
+					Location Origin = Center,
+				},
+				Hierarchy = 
+				{
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 155,
+				},
+				Named = 
+				{
+					string Name = "LampPost",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0, -0.75, 0],
+					Vec3 Scale = [0.800000012, 0.800000012, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [0.25, 1],
+					Location Origin = Center,
+				},
+			},
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 156,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [146, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 157,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [134, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 158,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [143.5, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 159,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [135.5, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638aed55162fc7f:Checkpoint",
+		LinkId = 
+		{
+			uint Id = 160,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [128.5, -34, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Checkpoint1",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 161,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [143, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 162,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [90.5, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 163,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [145.5, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 164,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [71, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 165,
+		},
+		Named = 
+		{
+			string Name = "Camera",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [3.5, 0.5, 40],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Camera = 
+		{
+			ProjectionMode ProjectionMode = Orthographic,
+			Facing Facing = NegativeZ,
+			CameraTransparentSort TransparentSort = InheritFromSpace,
+			float FieldOfView = 45,
+			float NearPlane = 0.5,
+			float FarPlane = 200,
+			float Size = 6,
+		},
+		SoundListener = 
+		{
+			bool Active = true,
+		},
+		CameraFollow = 
+		{
+			float CameraOffsetY = 1,
+			float FollowSpeed = 100,
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = false,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 166,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [62, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 167,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [48.5, -33.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 168,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [97.5, -37, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 169,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [88, -37, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638aed55162fc7f:Checkpoint",
+		LinkId = 
+		{
+			uint Id = 170,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [174.5, -31, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Checkpoint1",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 171,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [150.5, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 172,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [141.5, -31, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 173,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [69.5, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 174,
+		},
+		Named = 
+		{
+			string Name = "LampLight",
+		},
+		Archetyped = 
+		{
+			string Name = "563e6b596a557249:JumpingLight",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [124.5, -33.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Additive,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "560579aac256133b:NewFlashlightOn",
+			bool RenderMask = true,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Area = 
+		{
+			Vec2 Size = [6, 4],
+			Location Origin = Center,
+		},
+		JumpingLight = 
+		{
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 175,
+				},
+				Named = 
+				{
+					string Name = "LampTop",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0, -0.250827789, 0],
+					Vec3 Scale = [0.800000012, 0.800000012, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [0.88499999, 0.743399918, 0, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [0.5, 0.5],
+					Location Origin = Center,
+				},
+				Hierarchy = 
+				{
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 176,
+				},
+				Named = 
+				{
+					string Name = "LampPost",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0, -0.854351044, 0],
+					Vec3 Scale = [0.800000012, 0.800000012, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [0.25, 1],
+					Location Origin = Center,
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 177,
+				},
+				Named = 
+				{
+					string Name = "LampTop",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-4.00363922, -0.269870758, 0],
+					Vec3 Scale = [0.800000012, 0.800000012, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [0.88499999, 0.743399918, 0, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [0.5, 0.5],
+					Location Origin = Center,
+				},
+				Hierarchy = 
+				{
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 178,
+				},
+				Named = 
+				{
+					string Name = "LampPost",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-4.00363922, -0.873394012, 0],
+					Vec3 Scale = [0.800000012, 0.800000012, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [0.25, 1],
+					Location Origin = Center,
+				},
+			},
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 179,
+		},
+		Named = 
+		{
+			string Name = "Light",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [9.5, 9.5, 0],
+			Vec3 Scale = [0.800000012, 0.800000012, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.764999986, 0.950650036, 1, 0.600000024],
+			BlendMode BlendMode = Additive,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "560579aac256133b:NewFlashlightOn",
+			bool RenderMask = true,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		LightFollowMouse = 
+		{
+		},
+		FlashlightSwitch = 
+		{
+			string FlashlightOn = "560579aac256133b:NewFlashlightOn",
+			string FlashlightOff = "560579c3f132a9aa:NewFlashlightOff",
+			string SpriteOff = "5607a3893db8df63:NoSprite",
+		},
+		Area = 
+		{
+			Vec2 Size = [8, 8],
+			Location Origin = Center,
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 180,
+				},
+				Named = 
+				{
+					string Name = "LightMiddle",
+				},
+				EditorFlags = 
+				{
+					bool Locked = true,
+					bool Hidden = false,
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0, 0, 0],
+					Vec3 Scale = [0.800000012, 0.800000012, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [0.764999986, 0.950650036, 1, 0.600000024],
+					BlendMode BlendMode = Additive,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "560579aac256133b:NewFlashlightOn",
+					bool RenderMask = true,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [7, 7],
+					Location Origin = Center,
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 181,
+				},
+				Named = 
+				{
+					string Name = "LightCenter",
+				},
+				EditorFlags = 
+				{
+					bool Locked = true,
+					bool Hidden = false,
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0, 0, 0],
+					Vec3 Scale = [0.800000012, 0.800000012, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [0.764999986, 0.950650036, 1, 0.600000024],
+					BlendMode BlendMode = Additive,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "560579aac256133b:NewFlashlightOn",
+					bool RenderMask = true,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [3, 3],
+					Location Origin = Center,
+				},
+			},
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 182,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [160, -32, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638aed55162fc7f:Checkpoint",
+		LinkId = 
+		{
+			uint Id = 183,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [61.5, -35, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Checkpoint1",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638aed55162fc7f:Checkpoint",
+		LinkId = 
+		{
+			uint Id = 184,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [145, -33, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Checkpoint1",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 185,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [109, -9.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 186,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [144.5, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 187,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [45.5, -32.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "560c9667c1ff3939:GroundEnemy",
+		LinkId = 
+		{
+			uint Id = 188,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [134, -14, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 189,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [114, -9, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 190,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [64.5, -37.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 191,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [140, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 192,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [93.5, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "560c9667c1ff3939:GroundEnemy",
+		LinkId = 
+		{
+			uint Id = 193,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [92, -35, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 194,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [137, -31, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 195,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [55.5, -31.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 196,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [142.5, -31, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 197,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [59, -37.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 198,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [128.5, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 199,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [159, -32.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 200,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+		Archetyped = 
+		{
+			string Name = "560c9667c1ff3939:GroundEnemy",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [100, -14.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.519999981, 0, 0.389999986, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Area = 
+		{
+			Vec2 Size = [0.800000012, 0.800000012],
+			Location Origin = Center,
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		EnemyChargeIfWoken = 
+		{
+			float WakeUpTime = 1,
+			float ChargeSpeed = 40,
+		},
+		MassOverride = 
+		{
+			bool Active = true,
+			float invMass = 0.00200000009,
+			Vec3 invInertiaX = [0, 0, 0],
+			Vec3 invInertiaY = [0, 0, 0],
+			Vec3 invInertiaZ = [0, 0, 0],
+			Vec3 LocalCenterOfMass = [0, 0, 0],
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "5611966358cda6b8:Enemy",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.400000006, 0.400000006, 0.5],
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 201,
+				},
+				Named = 
+				{
+					string Name = "GroundEyes",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.0301589966, 0.12007308, 0.5],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Additive,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "561ddbce195f08ef:BatEyes",
+					bool RenderMask = true,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [2.5, 0.75],
+					Location Origin = Center,
+				},
+			},
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 202,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [138, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 203,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [46.5, -31.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 204,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [64.5, -37, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 205,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [133.5, -31, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 206,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [143, -30, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 207,
+		},
+		Named = 
+		{
+			string Name = "Sprite",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [34.5, -4.5, 0],
+			Vec3 Scale = [2, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5612aeb5a140b258:water",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 208,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [157.5, -33, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 209,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [50.5, -32, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 210,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+		Archetyped = 
+		{
+			string Name = "560c9667c1ff3939:GroundEnemy",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [107, -14.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.519999981, 0, 0.389999986, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Area = 
+		{
+			Vec2 Size = [0.800000012, 0.800000012],
+			Location Origin = Center,
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		EnemyChargeIfWoken = 
+		{
+			float WakeUpTime = 1,
+			float ChargeSpeed = 40,
+		},
+		MassOverride = 
+		{
+			bool Active = true,
+			float invMass = 0.00200000009,
+			Vec3 invInertiaX = [0, 0, 0],
+			Vec3 invInertiaY = [0, 0, 0],
+			Vec3 invInertiaZ = [0, 0, 0],
+			Vec3 LocalCenterOfMass = [0, 0, 0],
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "5611966358cda6b8:Enemy",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.400000006, 0.400000006, 0.5],
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 211,
+				},
+				Named = 
+				{
+					string Name = "GroundEyes",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.0301589966, 0.12007308, 0.5],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Additive,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "561ddbce195f08ef:BatEyes",
+					bool RenderMask = true,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [2.5, 0.75],
+					Location Origin = Center,
+				},
+			},
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 212,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [108.5, -9, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 213,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [127, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 214,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [156.5, -33, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 215,
+		},
+		Named = 
+		{
+			string Name = "LampLight",
+		},
+		Archetyped = 
+		{
+			string Name = "563e6b596a557249:JumpingLight",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [141.5, -32.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Additive,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "560579aac256133b:NewFlashlightOn",
+			bool RenderMask = true,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Area = 
+		{
+			Vec2 Size = [6, 4],
+			Location Origin = Center,
+		},
+		JumpingLight = 
+		{
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 216,
+				},
+				Named = 
+				{
+					string Name = "LampTop",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0, -0.151203156, 0],
+					Vec3 Scale = [0.800000012, 0.800000012, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [0.88499999, 0.743399918, 0, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [0.5, 0.5],
+					Location Origin = Center,
+				},
+				Hierarchy = 
+				{
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 217,
+				},
+				Named = 
+				{
+					string Name = "LampPost",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0, -0.75, 0],
+					Vec3 Scale = [0.800000012, 0.800000012, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [0.25, 1],
+					Location Origin = Center,
+				},
+			},
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 218,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [100, -9, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 219,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [125.5, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 220,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [142.5, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 221,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [126.5, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 222,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [129, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 223,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [71, -31, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 224,
+		},
+		Named = 
+		{
+			string Name = "LevelTileMap",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [3.5, 0.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		MultiSprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+		},
+		TileMap = 
+		{
+			string SourceName = "5611dd7ede4d4b50:OriginalLevel_TileMap00",
+			string PaletteName = "561dc5a79f21fa57:TileSet",
+			float UnitsPerTile = 1,
+			float MeshThickness = 1.20000005,
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638aed55162fc7f:Checkpoint",
+		LinkId = 
+		{
+			uint Id = 225,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [148.5, -14, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Checkpoint1",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "560c9667c1ff3939:GroundEnemy",
+		LinkId = 
+		{
+			uint Id = 226,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [81, -35, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 227,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+		Archetyped = 
+		{
+			string Name = "560c9667c1ff3939:GroundEnemy",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [119, -36.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.519999981, 0, 0.389999986, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Area = 
+		{
+			Vec2 Size = [0.800000012, 0.800000012],
+			Location Origin = Center,
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		EnemyChargeIfWoken = 
+		{
+			float WakeUpTime = 1,
+			float ChargeSpeed = 40,
+		},
+		MassOverride = 
+		{
+			bool Active = true,
+			float invMass = 0.00200000009,
+			Vec3 invInertiaX = [0, 0, 0],
+			Vec3 invInertiaY = [0, 0, 0],
+			Vec3 invInertiaZ = [0, 0, 0],
+			Vec3 LocalCenterOfMass = [0, 0, 0],
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "5611966358cda6b8:Enemy",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.400000006, 0.400000006, 0.5],
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 228,
+				},
+				Named = 
+				{
+					string Name = "GroundEyes",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.0301589966, 0.12007308, 0.5],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Additive,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "561ddbce195f08ef:BatEyes",
+					bool RenderMask = true,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [2.5, 0.75],
+					Location Origin = Center,
+				},
+			},
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 229,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [109.5, -9, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 230,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [122.5, -35.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "560c9667c1ff3939:GroundEnemy",
+		LinkId = 
+		{
+			uint Id = 231,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [75, -35, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 232,
+		},
+		Named = 
+		{
+			string Name = "Sprite",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [131.5, -17.5, 0],
+			Vec3 Scale = [2, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5612aeb5a140b258:water",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 233,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [123.5, -36.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 234,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [52, -31.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 235,
+		},
+		Named = 
+		{
+			string Name = "Sprite",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [161.5, -22.5, 0],
+			Vec3 Scale = [12, 0.5, 1],
+			Quat Rotation = [0, 0, -0.382683456, 0.923879504],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.149019614, 0.223529428, 0.239215702, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.5, 0.5, 0.5],
+		},
+		RigidBody = 
+		{
+			bool Static = true,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = false,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 236,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [129.5, -30, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 237,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [47.5, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 238,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [137, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 239,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [88.5, -37.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 240,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [60.5, -32, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 241,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [64.5, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 242,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [87, -37.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 243,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [123, -36, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 244,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [90.5, -7, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 245,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [48.5, -32, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 246,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [142, -30, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 247,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [58, -37.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "560c9667c1ff3939:GroundEnemy",
+		LinkId = 
+		{
+			uint Id = 248,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [94.5, -35, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 249,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [136.5, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 250,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [135, -30, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 251,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [139.5, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 252,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [58.5, -37.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638aed55162fc7f:Checkpoint",
+		LinkId = 
+		{
+			uint Id = 253,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [57, -5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Checkpoint1",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 254,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [130, -8, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 255,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [153.5, -32, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "563e6b596a557249:JumpingLight",
+		LinkId = 
+		{
+			uint Id = 256,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [53.5, -34.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [6, 4],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "LampLight",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 257,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [147.5, -30.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 258,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [44.5, -32.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "560c9667c1ff3939:GroundEnemy",
+		LinkId = 
+		{
+			uint Id = 259,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [72, -35, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 260,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [74, -31.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 261,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [141, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 262,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [129.5, -7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 263,
+		},
+		Named = 
+		{
+			string Name = "GroundEnemy",
+		},
+		Archetyped = 
+		{
+			string Name = "560c9667c1ff3939:GroundEnemy",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [137, -35.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.519999981, 0, 0.389999986, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Area = 
+		{
+			Vec2 Size = [0.800000012, 0.800000012],
+			Location Origin = Center,
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		EnemyChargeIfWoken = 
+		{
+			float WakeUpTime = 1,
+			float ChargeSpeed = 40,
+		},
+		MassOverride = 
+		{
+			bool Active = true,
+			float invMass = 0.00200000009,
+			Vec3 invInertiaX = [0, 0, 0],
+			Vec3 invInertiaY = [0, 0, 0],
+			Vec3 invInertiaZ = [0, 0, 0],
+			Vec3 LocalCenterOfMass = [0, 0, 0],
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "5611966358cda6b8:Enemy",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.400000006, 0.400000006, 0.5],
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 264,
+				},
+				Named = 
+				{
+					string Name = "GroundEyes",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.0301589966, 0.12007308, 0.5],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Additive,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "561ddbce195f08ef:BatEyes",
+					bool RenderMask = true,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Area = 
+				{
+					Vec2 Size = [2.5, 0.75],
+					Location Origin = Center,
+				},
+			},
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 265,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [131, -30, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5638d36996871c95:BatArchetype",
+		LinkId = 
+		{
+			uint Id = 266,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [107, -37, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [0.5, 0.5],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Bat",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 267,
+		},
+		Named = 
+		{
+			string Name = "WhirrImage",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-1.5, 0, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Additive,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "563a2b1db458ecc3:WhirrMaybeAnim",
+			bool RenderMask = true,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+	},
+},

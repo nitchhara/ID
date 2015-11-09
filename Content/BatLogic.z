@@ -1,0 +1,251 @@
+class BatLogic : ZilchComponent
+{
+  [Property]
+  var StartingPos : Real3 = Real3();
+  
+  [Property]
+  var WakeUpTime : Real = 0.2;
+  var SleepTimer : Real = 0.0;
+  
+  var Activated : Boolean = false;
+  var ExtraChargeTime : Real = 3.0;
+  var ChargeTimer : Real = 0.0;
+  
+  var Eyes : Cog;
+  var Player : Cog;
+  
+  [Property]
+  var ChargeSpeed : Real = 75.0;
+  
+  //Radius of the custom sphere collider for enemy detection
+  var RadiusOfFlashlight : Real = 2.5;
+  
+  var Light : Cog;
+  
+  function Initialize(init : CogInitializer)
+  {
+    this.StartingPos = this.Owner.Transform.Translation;
+    this.Owner.Transform.Translation = Real3(this.Owner.Transform.Translation.X, this.Owner.Transform.Translation.Y, -1);
+    this.Light = this.Space.FindObjectByName("Light");
+    this.Player = this.Space.FindObjectByName("Player");
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+    
+    this.Eyes = this.Owner.FindChildByName("BatEyes");
+  }
+
+  function OnCollisionStarted(event : CollisionEvent)
+  {
+    if (event.OtherObject.Name == "Player")
+    {
+      this.Space.ReloadLevel();
+    }
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //Gets the distance between the light and the enemy
+    var lightPos = this.Light.Transform.Translation;
+    var ownerPos = this.Owner.Transform.Translation;
+    var collVector = lightPos - ownerPos;
+    var collDistance = Math.Sqrt((collVector.X * collVector.X) + (collVector.Y * collVector.Y));
+    
+    var downRay = Ray();
+    downRay.Start = Real3(this.Owner.Transform.Translation.X, this.Owner.Transform.Translation.Y, 0);
+    downRay.Direction = Real3(0, -1, 0);
+    var downCastResult = this.Space.PhysicsSpace.CastRayFirst(downRay);
+    var downDistance = downCastResult.Distance;
+    var returnDir = this.StartingPos - ownerPos;
+    var vecMag = Math.Sqrt((returnDir.X * returnDir.X) + (returnDir.Y * returnDir.Y));
+    var returnVec = Real3();
+    if (vecMag != 0)
+    {
+      returnVec = Real3(returnDir.X/vecMag, returnDir.Y/vecMag, 0);
+    }
+    var upRay = Ray();
+    upRay.Start = Real3(this.Owner.Transform.Translation.X, this.Owner.Transform.Translation.Y, 0);
+    upRay.Direction = Real3(0, 1, 0);
+    var upCastResult = this.Space.PhysicsSpace.CastRayFirst(upRay);
+    var upDistance = upCastResult.Distance;
+    
+    var rightRay = Ray();
+    rightRay.Start = Real3(this.Owner.Transform.Translation.X, this.Owner.Transform.Translation.Y, 0);
+    rightRay.Direction = Real3(1, 0, 0);
+    var rightCastResult = this.Space.PhysicsSpace.CastRayFirst(rightRay);
+    var rightDistance = rightCastResult.Distance;
+    
+    var leftRay = Ray();
+    leftRay.Start = Real3(this.Owner.Transform.Translation.X, this.Owner.Transform.Translation.Y, 0);
+    leftRay.Direction = Real3(-1, 0, 0);
+    var leftCastResult = this.Space.PhysicsSpace.CastRayFirst(leftRay);
+    var leftDistance = upCastResult.Distance;
+    
+    var player = this.Player;
+    var playerPos = player.Transform.Translation;
+    var chargeDir = playerPos - ownerPos;
+    var chargeDistance = Math.Sqrt((chargeDir.X * chargeDir.X) + (chargeDir.Y * chargeDir.Y));
+    
+    var chargeDirUnit = chargeDir.X/chargeDistance.X;
+    
+    if (this.SleepTimer > 0)
+    {
+      this.Eyes.Sprite.Visible = true;
+    }
+    else
+    {
+      this.Eyes.Sprite.Visible = false;
+    }
+    
+    if(collDistance <= this.RadiusOfFlashlight && this.Light.FlashlightSwitch.IsFlashlightOn == true)
+    {
+      //Starts the timer
+      this.SleepTimer += event.Dt;
+      Console.WriteLine("`this.SleepTimer`");
+      
+      if (rightDistance < 0.275 || leftDistance < 0.275 && rightCastResult.ObjectHit.Name != "Player" && leftCastResult.ObjectHit.Name != "Player")
+      {
+          this.Owner.RigidBody.Velocity += Real3(0, 100, 0) * event.Dt;
+      }
+      else if (this.Light.FlashlightSwitch.IsFlashlightOn == true && chargeDistance <= 20.0 && this.SleepTimer >= this.WakeUpTime)
+      {
+        this.Activated = true;
+        this.Owner.IgnoreSpaceEffects.IgnoreGravity = false;
+        
+        this.Owner.Transform.Translation = Real3(this.Owner.Transform.Translation.X, this.Owner.Transform.Translation.Y, 0);
+        
+        //Applies velocity to the enemy
+        this.Owner.RigidBody.Velocity = Real3(((1.5 * (chargeDir.X)/2) * this.ChargeSpeed * event.Dt) + (chargeDirUnit * 1), this.Owner.RigidBody.Velocity.Y + 0.1, 0.0);
+        
+        if (downDistance <= 0.5)
+        {
+          this.Owner.RigidBody.Velocity = Real3(this.Owner.RigidBody.Velocity.X, 1.8, 0);
+        }
+        else if (downDistance <= 1)
+        {
+          this.Owner.RigidBody.Velocity = Real3(this.Owner.RigidBody.Velocity.X, 0.8, 0);
+        }
+        
+        if (upDistance <= 0.5)
+        {
+          this.Owner.RigidBody.Velocity = Real3(this.Owner.RigidBody.Velocity.X, -1.6, 0);
+        }
+        else if (upDistance <= 1)
+        {
+          this.Owner.RigidBody.Velocity = Real3(this.Owner.RigidBody.Velocity.X, -0.8, 0);
+        }
+      }
+    }
+    else if (this.Activated == true)
+    {
+        this.ChargeTimer += event.Dt;
+        if (this.ChargeTimer > this.ExtraChargeTime)
+        {
+            this.Activated = false;
+            this.ChargeTimer = 0.0;
+        }
+        else
+        {
+            this.Owner.IgnoreSpaceEffects.IgnoreGravity = false;
+            
+            this.Owner.Transform.Translation = Real3(this.Owner.Transform.Translation.X, this.Owner.Transform.Translation.Y, 0);
+            
+            //Applies velocity to the enemy
+            this.Owner.RigidBody.Velocity = Real3(((1.5 * (chargeDir.X)/2) * this.ChargeSpeed * event.Dt), this.Owner.RigidBody.Velocity.Y + 0.1, 0.0);
+            
+            if (downDistance <= 0.5)
+            {
+            this.Owner.RigidBody.Velocity = Real3(this.Owner.RigidBody.Velocity.X, 1.8, 0);
+            }
+            else if (downDistance <= 1)
+            {
+            this.Owner.RigidBody.Velocity = Real3(this.Owner.RigidBody.Velocity.X, 0.8, 0);
+            }
+            
+            if (upDistance <= 0.5)
+            {
+            this.Owner.RigidBody.Velocity = Real3(this.Owner.RigidBody.Velocity.X, -1.6, 0);
+            }
+            else if (upDistance <= 1)
+            {
+            this.Owner.RigidBody.Velocity = Real3(this.Owner.RigidBody.Velocity.X, -0.8, 0);
+            }
+        }
+    }
+    else if(this.SleepTimer > 0.0)
+    {
+      this.Owner.Transform.Translation = Real3(this.Owner.Transform.Translation.X, this.Owner.Transform.Translation.Y, 0);
+      this.Owner.RigidBody.Velocity = Real3(((1.5 * (returnVec.X)/2) * this.ChargeSpeed * event.Dt), ((1.5 * (returnVec.Y)/2) * this.ChargeSpeed * event.Dt), 0.0);
+      if(Math.Abs(this.SleepTimer) <= 0.1)
+      {
+          this.SleepTimer = 0.0;
+          Console.WriteLine("`this.SleepTimer`");
+      }
+      else
+      {
+          this.SleepTimer -= event.Dt;
+          Console.WriteLine("`this.SleepTimer`");
+      }
+      
+      if (Math.Abs(ownerPos.X - this.StartingPos.X) < 0.05 && Math.Abs(ownerPos.Y - this.StartingPos.Y) < 0.05)
+      {
+        this.Owner.Transform.Translation = this.StartingPos;
+        this.Owner.RigidBody.Velocity = Real3(0, 0, 0);
+      }
+      
+      if (this.Owner.RigidBody.Velocity != Real3(0, 0, 0))
+      {
+        if (downDistance <= 0.5)
+        {
+          this.Owner.RigidBody.Velocity = Real3(this.Owner.RigidBody.Velocity.X, 1.8, 0);
+        }
+        else if (downDistance <= 1)
+        {
+          this.Owner.RigidBody.Velocity = Real3(this.Owner.RigidBody.Velocity.X, 0.8, 0);
+        }
+        
+        if (upDistance <= 0.5)
+        {
+          this.Owner.RigidBody.Velocity = Real3(this.Owner.RigidBody.Velocity.X, -1.6, 0);
+        }
+        else if (upDistance <= 1)
+        {
+          this.Owner.RigidBody.Velocity = Real3(this.Owner.RigidBody.Velocity.X, -0.8, 0);
+        }
+      }
+      
+    }
+    else
+    {
+      this.Owner.Transform.Translation = Real3(this.Owner.Transform.Translation.X, this.Owner.Transform.Translation.Y, -1);
+      this.Owner.IgnoreSpaceEffects.IgnoreGravity = true;
+      this.Owner.RigidBody.Velocity = Real3(((1.5 * (returnVec.X)/2) * this.ChargeSpeed * event.Dt), ((1.5 * (returnVec.Y)/2) * this.ChargeSpeed * event.Dt), 0.0);
+      
+      if (this.Owner.RigidBody.Velocity != Real3(0, 0, 0))
+      {
+        if (downDistance <= 0.5)
+        {
+          this.Owner.RigidBody.Velocity = Real3(this.Owner.RigidBody.Velocity.X, 1.8, 0);
+        }
+        else if (downDistance <= 1)
+        {
+          this.Owner.RigidBody.Velocity = Real3(this.Owner.RigidBody.Velocity.X, 0.8, 0);
+        }
+        
+        if (upDistance <= 0.5)
+        {
+          this.Owner.RigidBody.Velocity = Real3(this.Owner.RigidBody.Velocity.X, -1.6, 0);
+        }
+        else if (upDistance <= 1)
+        {
+          this.Owner.RigidBody.Velocity = Real3(this.Owner.RigidBody.Velocity.X, -0.8, 0);
+        }
+      }
+      
+      if (Math.Abs(ownerPos.X - this.StartingPos.X) < 0.05 && Math.Abs(ownerPos.Y - this.StartingPos.Y) < 0.05)
+      {
+        this.Owner.Transform.Translation = Real3(this.StartingPos.X, this.StartingPos.Y, this.Owner.Transform.Translation.Z);
+        this.Owner.RigidBody.Velocity = Real3(0, 0, 0);
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+ContentLibrary = 
+{
+	string Name = "FlashlightTest",
+	uint64 LibraryId = 5600d0ed0ba54631,
+	string SourceControlType = "",
+	bool ReadOnly = false,
+},

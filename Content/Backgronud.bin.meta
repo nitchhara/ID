@@ -1,0 +1,12 @@
+BinaryContent = 
+{
+	BinaryBuilder = 
+	{
+		string Name = "Backgronud",
+		uint64 ResourceId = 560531d7bd52944f,
+		string LoaderType = "TilePaletteSource",
+		uint Version = 0,
+		string FilterTag = "",
+		string ResourceOwner = "",
+	},
+},
