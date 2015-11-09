@@ -1,0 +1,12 @@
+class GitChange : ZilchComponent
+{
+    //okay, now let's hope this is saved
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+    }
+}
