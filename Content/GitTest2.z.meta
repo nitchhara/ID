@@ -1,8 +1,0 @@
-TextContent = 
-{
-	ZilchScriptBuilder = 
-	{
-		string Name = "GitTest2",
-		uint64 ResourceId = 56df2b4e5d25fd3e,
-	},
-},
