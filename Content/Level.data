@@ -122,7 +122,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-12.9325676, -120.561531, 49.9999657],
+			Vec3 Translation = [-10.9139738, -119.142761, 49.9999657],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-008, 0, 1],
 		},
@@ -134,7 +134,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 12.2456598,
+			float Size = 16.529911,
 		},
 		EditorCameraController = 
 		{
@@ -142,7 +142,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-12.9325676, -120.561531, -3.28482456e-005],
+			Vec3 LookTarget = [-10.9139738, -119.142761, -3.2760021e-005],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -254,7 +254,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-13.5, -118.5, 0],
+			Vec3 Translation = [-18.5, -124.5, 0],
 			Vec3 Scale = [0.5, 0.5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -3566,29 +3566,6 @@ Level =
 		Transform = 
 		{
 			Vec3 Translation = [350.5, -142.5, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Area = 
-		{
-			Vec2 Size = [1, 1],
-			Location Origin = Center,
-		},
-		Named = 
-		{
-			string Name = "GroundEnemy",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "560c9667c1ff3939:GroundEnemy",
-		LinkId = 
-		{
-			uint Id = 72,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-9.5, -118.5, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
