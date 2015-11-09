@@ -8,7 +8,7 @@ class BatLogic : ZilchComponent
   var SleepTimer : Real = 0.0;
   
   var Activated : Boolean = false;
-  var ExtraChargeTime : Real = 3.0;
+  var ExtraChargeTime : Real = 1.5;
   var ChargeTimer : Real = 0.0;
   
   var Eyes : Cog;
