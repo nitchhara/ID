@@ -1,4 +1,5 @@
 class LatestCheckpointPos : ZilchComponent
 {
-  var LatestCheckpointPos : Real3 = Real3(-18.5, -124.5, 0);
+  //var LatestCheckpointPos : Real3 = Real3(-18.5, -124.5, 0);
+  var LatestCheckpointPos : Real3 = Real3(-13.5, -118.5, 0);
 }
