@@ -6,7 +6,7 @@ Cog =
 		string ProjectOwner = "",
 		string DefaultLevel = "Level",
 		string ProjectSpace = "Space",
-		string ProjectFolder = "C:\Users\Nitch\Downloads\IDBetaPlaytest",
+		string ProjectFolder = "C:\Users\Nitch\Documents\GitHub\ID",
 		uint ProjectEngineRevision = 12494,
 		bool AutoTakeProjectScreenshot = true,
 	},
